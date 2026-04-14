@@ -1,0 +1,59 @@
+services:
+
+  ganache:
+    image: node:20.18.3-slim
+    container_name: ganache
+    command: bash -c "npm install ganache --global && date && ganache --wallet.mnemonic --wallet.defaultBalance 10000 --chain.vmErrorsOnRPCResponse true --server.host 0.0.0.0 --server.port 8545"
+    profiles:
+      - ganache
+
+  hardhat:
+    build:
+      context: ../..
+      dockerfile: docker/hardhat/Dockerfile
+    container_name: hardhat
+    profiles:
+      - hardhat
+
+  anvil:
+    image: ghcr.io/foundry-rs/foundry:v1.6.0-rc1
+    container_name: anvil
+    environment:
+      ANVIL_IP_ADDR: "0.0.0.0"
+    working_dir: /anvil
+    command: anvil --balance 10000
+    profiles:
+      - anvil
+
+  geth:
+    image: ethereum/client-go:stable
+    container_name: geth
+    command:
+      - --dev
+      - --dev.gaslimit=60000000
+      - --http
+      - --http.addr=geth
+      - --http.vhosts=*
+    profiles:
+      - geth
+
+  accountability:
+    build:
+      context: ../..
+      dockerfile: docker/accountability/Dockerfile
+      args:
+        NETWORK: ${NETWORK}
+        CONF_FILE: ${CONF_FILE}
+        ROSBAG: ${ROSBAG}
+    container_name: accountability
+    volumes:
+      - type: bind
+        source: ./data/logs
+        target: /app/ACOLYTE/logs/
+      - type: bind
+        source: ./data/metrics
+        target: /app/ACOLYTE/metrics/
+    environment:
+      NETWORK: ${NETWORK}
+      CONF_FILE: ${CONF_FILE}
+      ROSBAG: ${ROSBAG}
