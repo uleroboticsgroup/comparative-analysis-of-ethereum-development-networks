@@ -20,6 +20,8 @@ if [ ! -d ${LOGS_ROSBAG__FOLDER} ]; then
     mkdir -p ${LOGS_ROSBAG__FOLDER}
 fi
 
+sed -i 's\/tf:\/tf_drop:\' topics-config.yaml
+
 # Wait for the blockchain network container to be up
 sleep 10
 
