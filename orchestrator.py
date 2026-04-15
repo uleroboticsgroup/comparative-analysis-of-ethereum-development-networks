@@ -42,7 +42,7 @@ def __remove_rosbag_files():
     logging.info('Removing docker/accountability/files/rosbags folder files')
 
     [shutil.rmtree(folder.path)
-     for folder in os.scandir(ROSBAGS_FOLDERS)]
+     for folder in os.scandir(ROSBAGS_FOLDERS) if folder.is_dir()]
 
 
 def __unzip_file(zip_file: str, extract_folder: str):

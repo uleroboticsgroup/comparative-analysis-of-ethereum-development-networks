@@ -1,7 +1,7 @@
 # Repository specific
-docker/accountability/files/rosbags/*
-docker/compose/data/logs/*
-docker/compose/data/metrics/*
+docker/accountability/files/rosbags/rosbag*
+docker/compose/data/logs/*.log
+docker/compose/data/metrics/*.csv
 *.zip
 
 # Byte-compiled / optimized / DLL files
