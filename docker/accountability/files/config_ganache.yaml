@@ -1,0 +1,13 @@
+contract:
+  address:
+  compiled_name: BCubedContract
+  compiled_path: solidity/
+name: test
+network:
+  account_address: '0x959FD7Ef9089B7142B6B908Dc3A8af7Aa8ff0FA1'
+  chain_id: 1337
+  private_key: '0xabf82ff96b463e9d82b83cb9bb450fe87e6166d4db6d7021d0c71d7e960d5abe'
+  server: http://ganache:8545
+solidity:
+  contract_file: BCubedContract.sol
+  path: solidity/abstract/

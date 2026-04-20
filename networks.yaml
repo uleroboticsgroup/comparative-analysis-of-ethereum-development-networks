@@ -1,0 +1,15 @@
+ganache:
+  container: ganache
+  configuration: config_ganache.yaml
+
+hardhat:
+  container: hardhat
+  configuration: config_hardhat.yaml
+
+anvil:
+  container: anvil
+  configuration: config_anvil.yaml
+
+geth:
+  container: geth
+  configuration: config_geth.yaml

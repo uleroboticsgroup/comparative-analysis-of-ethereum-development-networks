@@ -1,3 +1,9 @@
+# Repository specific
+docker/accountability/files/rosbags/rosbag*
+docker/compose/data/logs/*.log
+docker/compose/data/metrics/*.csv
+*.zip
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
