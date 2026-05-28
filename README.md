@@ -33,7 +33,7 @@ The basic execution of the `orchestrator.py` script is executing the following c
 (.venv) python3 orchestrator.py
 ```
 
-This command will build and run the accountability container and a network container each time as many rosbags and networks are configured. The rosbag files used will be located in the `docker/accountability/files/rosbags` directory and the networks used will be configured in the `networks.yaml` file.
+This command will build and run the accountability container and a network container each time as many files (rosbags and CSV files) and networks are configured. The rosbag files used will be located in the `docker/accountability/files/rosbags` directory and the networks used will be configured in the `networks.yaml` file.
 
 ### Unzipping a Zenodo file
 
@@ -43,14 +43,32 @@ Download the Zenodo file from [https://zenodo.org/records/19469198](https://zeno
 (.venv) python3 orchestrator.py -u
 ```
 
-The file to be unzipped by default is `docker/accountability/files/19469198.zip`. This command will remove the files in the `docker/accountability/files/rosbags` directory, unzip the downloaded zip file, remove the unnecessary extracted files, and prepare the new rosbags in the `docker/accountability/files/rosbags` directory. Then, it will build and run the accountability container and a network container each time as many rosbags and networks are configured.
+The file to be unzipped by default is `docker/accountability/files/19469198.zip`. This command will remove the files in the `docker/accountability/files/rosbags` directory, unzip the downloaded zip file, remove the unnecessary extracted files, and prepare the new rosbags in the `docker/accountability/files/rosbags` directory. Then, it will build and run the accountability container and a network container each time as many files (rosbags and CSV files) and networks are configured.
 
 #### Unzipping a file that is different from the file named `docker/accountability/files/19469198.zip`
 
 Execute the following command:
 
 ```
-(.venv) python3 orchestrator.py -u -f docker/accountability/files/<zip_file_name>.zip
+(.venv) python3 orchestrator.py -u -fu docker/accountability/files/<zip_file_name>.zip
+```
+
+### Splitting a Kaggle CSV file by specific days
+
+Download the Kaggle file from [https://www.kaggle.com/datasets/cephasax/obdii-ds3?select=exp1_14drivers_14cars_dailyRoutes.csv](https://www.kaggle.com/datasets/cephasax/obdii-ds3?select=exp1_14drivers_14cars_dailyRoutes.csv) and place the file file in the `docker/accountability/files` directory. Then, execute the following command:
+
+```
+(.venv) python3 orchestrator.py -s
+```
+
+The file to be splitted by default is `docker/accountability/files/exp1_14drivers_14cars_dailyRoutes.csv`. This command will remove the files in the `docker/accountability/files/csv` directory, split the downloaded CSV file, and prepare the new CSV files in the `docker/accountability/files/csv` directory. Then, it will build and run the accountability container and a network container each time as many files (rosbags and CSV files) and networks are configured.
+
+#### Splitting a file that is different from the file named `docker/accountability/files/exp1_14drivers_14cars_dailyRoutes.csv`
+
+Execute the following command:
+
+```
+(.venv) python3 orchestrator.py -s -fs docker/accountability/files/<csv_file_name>.csv
 ```
 
 ## Logging
