@@ -5,6 +5,7 @@ WORKDIR /app
 ARG NETWORK
 ARG CONF_FILE
 ARG ROSBAG
+ARG CSV
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install python3.10-venv pip -y
@@ -25,9 +26,10 @@ RUN python3 -m venv .venv && . .venv/bin/activate && \
 COPY --chown=admin docker/accountability/scripts/entrypoint.sh /app/
 COPY --chown=admin docker/accountability/scripts/monitor.sh /app/ACOLYTE/
 
-COPY --chown=admin docker/accountability/files/config_* /app/ACOLYTE/
+COPY --chown=admin docker/accountability/config/config_* /app/ACOLYTE/
 COPY --chown=admin docker/accountability/files/rosbags/ /app/rosbags/
+COPY --chown=admin docker/accountability/files/csv/ /app/csv/
 
-CMD ["$NETWORK", "$CONF_FILE", "$ROSBAG"]
+CMD ["$NETWORK", "$CONF_FILE", "$ROSBAG", "$CSV"]
 
 ENTRYPOINT ["./entrypoint.sh"]
