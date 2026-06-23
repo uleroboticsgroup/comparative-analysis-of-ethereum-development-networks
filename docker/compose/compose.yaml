@@ -16,7 +16,7 @@ services:
       - hardhat
 
   anvil:
-    image: ghcr.io/foundry-rs/foundry:v1.6.0-rc1
+    image: ghcr.io/foundry-rs/foundry:stable
     container_name: anvil
     environment:
       ANVIL_IP_ADDR: "0.0.0.0"
