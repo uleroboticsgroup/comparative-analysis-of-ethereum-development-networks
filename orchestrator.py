@@ -7,12 +7,14 @@ import subprocess
 import sys
 import time
 import zipfile
-import yaml
-import docker
-import pandas
 
 from datetime import datetime
 from logging import handlers
+from prettytable import PrettyTable
+
+import yaml
+import pandas
+import docker
 
 
 LOGS_FILE_PATH = "./logs/"
@@ -38,6 +40,21 @@ CONTAINER_NAMES = [
     CONTAINER_GANACHE_NAME,
     CONTAINER_HARDHAT_NAME
 ]
+
+METRICS_FOLDER="docker/compose/data/metrics"
+METRICS = [
+    'timestamp',
+    'cpu_pct', 
+    'mem_rss_bytes', 
+    'mem_pct', 
+    'disk_read_bytes', 
+    'disk_write_bytes'
+]
+ROUND_DIGITS = 3
+
+
+def __get_directories_from_folder(path: str):
+    return [file.path for file in os.scandir(path) if file.is_dir()]
 
 
 def __remove_csv_files():
@@ -189,7 +206,7 @@ def __run_containers(docker_client):
     try:
         conf = __read_networks_config_file()
 
-        rosbags = [file.path for file in os.scandir(ROSBAGS_FOLDER) if file.is_dir()]
+        rosbags = __get_directories_from_folder(ROSBAGS_FOLDER)
         csv_files = [file.path
                      for file in os.scandir(CSV_FOLDER) if file.is_file() and '.csv' in file.path]
 
@@ -240,6 +257,113 @@ def __run_containers(docker_client):
         sys.exit()
 
 
+def __get_rosbag_metrics_folder(file):
+    return file.is_dir() and '.csv' not in file.path
+
+
+def __get_csv_metrics_folder(file):
+    return file.is_dir() and '.csv' in file.path
+
+
+def __get_concat_metrics_by_network(folder: str, networks: list, conditional_function):
+    total_metrics_by_network = {network: {metric: [] for metric in METRICS} for network in networks}
+
+    network_index = 0
+    for metrics_folders_by_network in folder:
+        network = networks[network_index]
+        metrics_by_network = {metric: [] for metric in METRICS}
+
+        rosbags_metrics_folders = [file.path for file in os.scandir(metrics_folders_by_network)
+                                    if conditional_function(file)]
+        for rosbag_metric_folder in rosbags_metrics_folders:
+            rosbag_metrics_file = os.listdir(rosbag_metric_folder)[0]
+            rosbag_metric_csv = os.path.join(rosbag_metric_folder, rosbag_metrics_file)
+            data_frame_rosbag_metric = pandas.read_csv(rosbag_metric_csv)
+            for metric in METRICS:
+                if metric != 'timestamp':
+                    metrics_by_network[metric].append(data_frame_rosbag_metric[metric])
+                else:
+                    elapsed_seconds = pandas.to_datetime(data_frame_rosbag_metric[metric][len(data_frame_rosbag_metric[metric])-1]) - pandas.to_datetime(data_frame_rosbag_metric[metric][0])
+                    metrics_by_network[metric].append(pandas.Series({0: elapsed_seconds.seconds}))
+
+        for metric in METRICS:
+            # Concatenate pandas objects along a particular axis
+            total_metrics_by_network[network][metric] = pandas.concat(metrics_by_network[metric], ignore_index=False)
+
+        network_index += 1
+
+    return total_metrics_by_network
+
+
+def __get_min(value: float):
+    return value.min().round(ROUND_DIGITS)
+
+
+def __get_max(value: float):
+    return value.max().round(ROUND_DIGITS)
+
+
+def __get_mean(value: float):
+    return value.mean().round(ROUND_DIGITS)
+
+
+def __print_table(header: str, metrics_dictionary: dict, value_function):
+    table = PrettyTable()
+    table.title = header
+    table.field_names = ["network"] + METRICS
+
+    for network in metrics_dictionary.keys():
+        mean_metrics = [network]
+        for metric in METRICS:
+            mean_metrics.append(value_function(metrics_dictionary[network][metric]))
+
+        table.add_row(mean_metrics)
+
+    logging.info(table)
+
+
+def __manage_data():
+    network_folders = __get_directories_from_folder(METRICS_FOLDER)
+    networks = [network.split("/")[len(network.split("/"))-1] for network in network_folders]
+    if len(networks) == 0:
+        logging.error('There is no data available for treatment.')
+        return
+
+    total_rosbag_metrics_by_network = __get_concat_metrics_by_network(network_folders, networks, __get_rosbag_metrics_folder)
+    #__print_table("ROSBAGS MIN:", total_rosbag_metrics_by_network, __get_min)
+    #__print_table("ROSBAGS MAX:", total_rosbag_metrics_by_network, __get_max)
+    __print_table("ROSBAGS MEAN:", total_rosbag_metrics_by_network, __get_mean)
+
+    logging.info('\n====================================================================================\n')
+
+    total_csv_metrics_by_network = __get_concat_metrics_by_network(network_folders, networks, __get_csv_metrics_folder)
+    #__print_table("CSV MIN:", total_csv_metrics_by_network, __get_min)
+    #__print_table("CSV MAX:", total_csv_metrics_by_network, __get_max)
+    __print_table("CSV MEAN:", total_csv_metrics_by_network, __get_mean)
+
+
+def __create_graphics():
+    logging.info("Creating graphics...")
+
+
+def __execute_script(arguments):
+    if arguments.unzip:
+        __extract_rosbags(arguments.file_to_unzip)
+
+    if arguments.split:
+        __split_csv(arguments.file_to_split)
+
+    if arguments.execute:
+        docker_client = docker.from_env()
+        __run_containers(docker_client)
+
+    if arguments.data:
+        __manage_data()
+
+    if arguments.graphics:
+        __create_graphics()
+
+
 def __configure_logging():
     log_name = "".join(
         [LOGS_FILE_PATH, datetime.today().strftime('%Y-%m-%d'), ".log"])
@@ -265,6 +389,13 @@ def __parse_arguments():
 
     main_argument_group = parser.add_argument_group(
         "required named arguments")
+
+    main_argument_group.add_argument(
+        "-e",
+        "--execute",
+        action="store_true",
+        help="execute the Docker containers"
+    )
 
     main_argument_group.add_argument(
         "-u",
@@ -296,6 +427,20 @@ def __parse_arguments():
         help="path file to split"
     )
 
+    main_argument_group.add_argument(
+        "-d",
+        "--data",
+        action="store_true",
+        help="extract data"
+    )
+
+    main_argument_group.add_argument(
+        "-g",
+        "--graphics",
+        action="store_true",
+        help="generate graphics from the data"
+    )
+
     return parser.parse_args()
 
 
@@ -305,7 +450,12 @@ def __validate_arguments(arguments):
     if arguments.unzip:
         if arguments.file_to_unzip is (None or '') or not os.path.exists(arguments.file_to_unzip):
             are_valid = False
-            logging.error('The specified zip file is not valid. Please review it.')
+            logging.error('The specified ZIP file to unzip is not valid. Please review it.')
+
+    if arguments.split:
+        if arguments.file_to_split is (None or '') or not os.path.exists(arguments.file_to_split):
+            are_valid = False
+            logging.error('The specified CSV file to split is not valid. Please review it.')
 
     return are_valid
 
@@ -327,14 +477,7 @@ def main():
 
         sys.exit()
 
-    if arguments.unzip:
-        __extract_rosbags(arguments.file_to_unzip)
-
-    if arguments.split:
-        __split_csv(arguments.file_to_split)
-
-    docker_client = docker.from_env()
-    __run_containers(docker_client)
+    __execute_script(arguments)
 
     logging.info('Stopping orchestrator\n')
 
