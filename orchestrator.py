@@ -53,18 +53,18 @@ METRICS = [
 ROUND_DIGITS = 3
 
 
-def __get_directories_from_folder(path: str):
+def _get_directories_from_folder(path: str):
     return [file.path for file in os.scandir(path) if file.is_dir()]
 
 
-def __remove_csv_files():
+def _remove_csv_files():
     logging.info('Removing docker/accountability/files/csv folder files')
 
     [os.remove(file) for file in os.scandir(CSV_FOLDER) if file.is_file() and '.csv' in file.path]
 
 
-def __split_csv(csv_file_arg: str):
-    __remove_csv_files()
+def _split_csv(csv_file_arg: str):
+    _remove_csv_files()
 
     SELECTED_VEHICLES = ['car1', 'car11'] # TODO: Configure the vehicles by arguments
 
@@ -120,20 +120,20 @@ def __split_csv(csv_file_arg: str):
         logging.info('Creating file: %s', filename)
 
 
-def __remove_rosbag_files():
+def _remove_rosbag_files():
     logging.info('Removing docker/accountability/files/rosbags folder files')
 
     [shutil.rmtree(folder.path) for folder in os.scandir(ROSBAGS_FOLDER) if folder.is_dir()]
 
 
-def __unzip_file(zip_file: str, extract_folder: str):
+def _unzip_file(zip_file: str, extract_folder: str):
     logging.info('Unzipping file: %s', zip_file)
 
     with zipfile.ZipFile(zip_file, READ_MODE) as zip_ref:
         zip_ref.extractall(extract_folder)
 
 
-def __remove_unneeded_files():
+def _remove_unneeded_files():
     logging.info('Removing unneeded files')
 
     [shutil.rmtree(f"{folder.path}/") 
@@ -149,18 +149,18 @@ def __remove_unneeded_files():
     shutil.rmtree(TMP_FOLDER)
 
 
-def __extract_rosbags(zip_file_arg: str):
-    __remove_rosbag_files()
+def _extract_rosbags(zip_file_arg: str):
+    _remove_rosbag_files()
 
-    __unzip_file(zip_file_arg, TMP_FOLDER)
+    _unzip_file(zip_file_arg, TMP_FOLDER)
 
-    [__unzip_file(zip_file.path, ROSBAGS_FOLDER) 
+    [_unzip_file(zip_file.path, ROSBAGS_FOLDER) 
      for zip_file in os.scandir(TMP_FOLDER) if zip_file.is_file()]
 
-    __remove_unneeded_files()
+    _remove_unneeded_files()
 
 
-def __read_networks_config_file():
+def _read_networks_config_file():
     configuration = {}
 
     with open(CONF_FILE, READ_MODE, encoding=ENCODING) as file:
@@ -175,7 +175,7 @@ def __read_networks_config_file():
     return configuration
 
 
-def __get_conf_file_and_file(rosbag: str, configuration):
+def _get_conf_file_and_file(rosbag: str, configuration):
     path = pathlib.Path(rosbag)
     file_str = str(pathlib.Path(*path.parts[4:]))
     conf_file = configuration['configuration']
@@ -183,7 +183,7 @@ def __get_conf_file_and_file(rosbag: str, configuration):
     return conf_file, file_str
 
 
-def __run_and_wait_containers(docker_client, docker_command: str):
+def _run_and_wait_containers(docker_client, docker_command: str):
     logging.info(docker_command)
     subprocess.run([docker_command], shell=True, check=True)
 
@@ -192,21 +192,21 @@ def __run_and_wait_containers(docker_client, docker_command: str):
         time.sleep(10)
 
     logging.info('Container %s ended', acolyte_container.name)
-    __stop_containers(docker_client)
+    _stop_containers(docker_client)
 
 
-def __stop_containers(docker_client):
+def _stop_containers(docker_client):
     for container in docker_client.containers.list():
         if container.name in CONTAINER_NAMES:
             logging.info('Stopping container %s', container.name)
             container.stop()
 
 
-def __run_containers(docker_client):
+def _run_containers(docker_client):
     try:
-        conf = __read_networks_config_file()
+        conf = _read_networks_config_file()
 
-        rosbags = __get_directories_from_folder(ROSBAGS_FOLDER)
+        rosbags = _get_directories_from_folder(ROSBAGS_FOLDER)
         csv_files = [file.path
                      for file in os.scandir(CSV_FOLDER) if file.is_file() and '.csv' in file.path]
 
@@ -222,12 +222,12 @@ def __run_containers(docker_client):
                 logging.info('-------------------------------------------------------------------')
                 logging.info('Rosbag %d / %d', i, len(rosbags))
 
-                conf_file, file = __get_conf_file_and_file(rosbag, configuration)
+                conf_file, file = _get_conf_file_and_file(rosbag, configuration)
 
                 var_env = f"NETWORK='{network}' CONF_FILE='{conf_file}' ROSBAG='{file}'"
                 docker_command = f"{var_env} docker compose -f docker/compose/compose.yaml --profile {network} up -d"
 
-                __run_and_wait_containers(docker_client, docker_command)
+                _run_and_wait_containers(docker_client, docker_command)
 
                 i += 1
 
@@ -239,38 +239,52 @@ def __run_containers(docker_client):
                 logging.info('-------------------------------------------------------------------')
                 logging.info('CSV %d / %d', i, len(csv_files))
 
-                conf_file, file = __get_conf_file_and_file(csv, configuration)
+                conf_file, file = _get_conf_file_and_file(csv, configuration)
 
                 var_env = f"NETWORK='{network}' CONF_FILE='{conf_file}' CSV='{file}'"
                 docker_command = f"{var_env} docker compose -f docker/compose/compose.yaml --profile {network} up -d"
 
-                __run_and_wait_containers(docker_client, docker_command)
+                _run_and_wait_containers(docker_client, docker_command)
 
                 i += 1
 
             logging.info('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n')
 
     except KeyboardInterrupt:
-        __stop_containers(docker_client)
+        _stop_containers(docker_client)
         logging.info('Stopping orchestrator\n')
 
         sys.exit()
 
 
-def __get_rosbag_metrics_folder(file):
+def _get_rosbag_metrics_folder(file):
     return file.is_dir() and '.csv' not in file.path
 
 
-def __get_csv_metrics_folder(file):
+def _get_csv_metrics_folder(file):
     return file.is_dir() and '.csv' in file.path
 
 
-def __get_concat_metrics_by_network(folder: str, networks: list, conditional_function):
+def _get_concat_metrics_by_network(folder, networks: list, conditional_function):
+    if len(networks) == 0:
+        logging.error('The list of networks is empty')
+        return []
+
+    if conditional_function is None or conditional_function == '':
+        logging.error('The conditional_function is not valid')
+        return []
+
     total_metrics_by_network = {network: {metric: [] for metric in METRICS} for network in networks}
 
     network_index = 0
     for metrics_folders_by_network in folder:
+        if network_index >= len(networks):
+            break
+        
         network = networks[network_index]
+        if network not in metrics_folders_by_network:
+            continue
+
         metrics_by_network = {metric: [] for metric in METRICS}
 
         rosbags_metrics_folders = [file.path for file in os.scandir(metrics_folders_by_network)
@@ -295,19 +309,19 @@ def __get_concat_metrics_by_network(folder: str, networks: list, conditional_fun
     return total_metrics_by_network
 
 
-def __get_min(value: float):
+def _get_min(value: float):
     return value.min().round(ROUND_DIGITS)
 
 
-def __get_max(value: float):
+def _get_max(value: float):
     return value.max().round(ROUND_DIGITS)
 
 
-def __get_mean(value: float):
+def _get_mean(value: float):
     return value.mean().round(ROUND_DIGITS)
 
 
-def __print_table(header: str, metrics_dictionary: dict, value_function):
+def _print_table(header: str, metrics_dictionary: dict, value_function):
     table = PrettyTable()
     table.title = header
     table.field_names = ["network"] + METRICS
@@ -322,49 +336,49 @@ def __print_table(header: str, metrics_dictionary: dict, value_function):
     logging.info(table)
 
 
-def __manage_data():
-    network_folders = __get_directories_from_folder(METRICS_FOLDER)
+def _manage_data():
+    network_folders = _get_directories_from_folder(METRICS_FOLDER)
     networks = [network.split("/")[len(network.split("/"))-1] for network in network_folders]
     if len(networks) == 0:
         logging.error('There is no data available for treatment.')
         return
 
-    total_rosbag_metrics_by_network = __get_concat_metrics_by_network(network_folders, networks, __get_rosbag_metrics_folder)
-    #__print_table("ROSBAGS MIN:", total_rosbag_metrics_by_network, __get_min)
-    #__print_table("ROSBAGS MAX:", total_rosbag_metrics_by_network, __get_max)
-    __print_table("ROSBAGS MEAN:", total_rosbag_metrics_by_network, __get_mean)
+    total_rosbag_metrics_by_network = _get_concat_metrics_by_network(network_folders, networks, _get_rosbag_metrics_folder)
+    #_print_table("ROSBAGS MIN:", total_rosbag_metrics_by_network, _get_min)
+    #_print_table("ROSBAGS MAX:", total_rosbag_metrics_by_network, _get_max)
+    _print_table("ROSBAGS MEAN:", total_rosbag_metrics_by_network, _get_mean)
 
     logging.info('\n====================================================================================\n')
 
-    total_csv_metrics_by_network = __get_concat_metrics_by_network(network_folders, networks, __get_csv_metrics_folder)
-    #__print_table("CSV MIN:", total_csv_metrics_by_network, __get_min)
-    #__print_table("CSV MAX:", total_csv_metrics_by_network, __get_max)
-    __print_table("CSV MEAN:", total_csv_metrics_by_network, __get_mean)
+    total_csv_metrics_by_network = _get_concat_metrics_by_network(network_folders, networks, _get_csv_metrics_folder)
+    #_print_table("CSV MIN:", total_csv_metrics_by_network, _get_min)
+    #_print_table("CSV MAX:", total_csv_metrics_by_network, _get_max)
+    _print_table("CSV MEAN:", total_csv_metrics_by_network, _get_mean)
 
 
-def __create_graphics():
+def _create_graphics():
     logging.info("Creating graphics...")
 
 
-def __execute_script(arguments):
+def _execute_script(arguments):
     if arguments.unzip:
-        __extract_rosbags(arguments.file_to_unzip)
+        _extract_rosbags(arguments.file_to_unzip)
 
     if arguments.split:
-        __split_csv(arguments.file_to_split)
+        _split_csv(arguments.file_to_split)
 
     if arguments.execute:
         docker_client = docker.from_env()
-        __run_containers(docker_client)
+        _run_containers(docker_client)
 
     if arguments.data:
-        __manage_data()
+        _manage_data()
 
     if arguments.graphics:
-        __create_graphics()
+        _create_graphics()
 
 
-def __configure_logging():
+def _configure_logging():
     log_name = "".join(
         [LOGS_FILE_PATH, datetime.today().strftime('%Y-%m-%d'), ".log"])
 
@@ -384,7 +398,7 @@ def __configure_logging():
                             log_terminal_handler])
 
 
-def __parse_arguments():
+def _parse_arguments():
     parser = argparse.ArgumentParser(description=__doc__)
 
     main_argument_group = parser.add_argument_group(
@@ -444,7 +458,7 @@ def __parse_arguments():
     return parser.parse_args()
 
 
-def __validate_arguments(arguments):
+def _validate_arguments(arguments):
     are_valid = True
 
     if arguments.unzip:
@@ -465,22 +479,22 @@ def main():
     Main function.
     """
 
-    __configure_logging()
+    _configure_logging()
 
     logging.info('Starting orchestrator...')
 
-    arguments = __parse_arguments()
-    arguments_are_valid = __validate_arguments(arguments)
+    arguments = _parse_arguments()
+    arguments_are_valid = _validate_arguments(arguments)
     if not arguments_are_valid:
         logging.critical('Arguments are not valid.')
         logging.info('Stopping orchestrator\n')
 
         sys.exit()
 
-    __execute_script(arguments)
+    _execute_script(arguments)
 
     logging.info('Stopping orchestrator\n')
 
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     main()
