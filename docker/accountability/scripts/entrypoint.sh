@@ -22,11 +22,7 @@ cd /app/ACOLYTE
 cp ${CONF_FILE} bcubed-config.yaml
 
 # Wait for the blockchain network container to be up
-if [ "${NETWORK}" = "ganache" ]; then
-    sleep 10
-else
-    sleep 4
-fi
+sleep 4
 
 
 process_rosbag() {
