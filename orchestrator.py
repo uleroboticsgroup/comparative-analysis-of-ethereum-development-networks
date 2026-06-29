@@ -80,14 +80,14 @@ def _split_csv(csv_file_arg: str):
         #"ENGINE_COOLANT_TEMP": int, #NA
         "FUEL_LEVEL": str, 
         "ENGINE_LOAD": str, 
-        #"AMBIENT_AIR_TEMP": str, 
+        #"AMBIENT_AIR_TEMP": str,
         #"ENGINE_RPM": int, #NA
         #"INTAKE_MANIFOLD_PRESSURE": int, #NA
         "MAF": str, 
         "LONG TERM FUEL TRIM BANK 2": str, 
         "FUEL_TYPE": str, 
         #"AIR_INTAKE_TEMP": int, #NA
-        #"FUEL_PRESSURE": str, 
+        #"FUEL_PRESSURE": str,
         #"SPEED": int, #NA
         "SHORT TERM FUEL TRIM BANK 2": str, 
         "SHORT TERM FUEL TRIM BANK 1": str, 
@@ -106,12 +106,11 @@ def _split_csv(csv_file_arg: str):
 
     data_frame = data_frame[data_frame['VEHICLE_ID'].isin(SELECTED_VEHICLES)]
 
-    # Convertir la columna TIMESTAMP a datetime
+    # TIMESTAMP column to datetime
     timestamp = pandas.to_datetime(data_frame['TIMESTAMP'], unit='ms', errors='coerce')
     year = timestamp.dt.year
     day = timestamp.dt.dayofyear
 
-    # Agrupar por VEHICLE_ID, año y día usando variables auxiliares
     grouped_vehicles = data_frame.groupby([data_frame['VEHICLE_ID'], year, day]).groups.items()
     for (vehicle_id, year, day), idx in grouped_vehicles:
         group = data_frame.loc[idx]

@@ -1,9 +1,9 @@
 services:
 
   ganache:
-    image: node:20.18.3-slim
+    image: trufflesuite/ganache:latest
     container_name: ganache
-    command: bash -c "npm install ganache --global && ganache --wallet.mnemonic --wallet.defaultBalance 10000 --chain.vmErrorsOnRPCResponse true --server.host 0.0.0.0 --server.port 8545"
+    command: --wallet.mnemonic --wallet.defaultBalance 10000 --chain.vmErrorsOnRPCResponse true --server.host 0.0.0.0 --server.port 8545
     profiles:
       - ganache
 
@@ -16,7 +16,7 @@ services:
       - hardhat
 
   anvil:
-    image: ghcr.io/foundry-rs/foundry:v1.6.0-rc1
+    image: ghcr.io/foundry-rs/foundry:stable
     container_name: anvil
     environment:
       ANVIL_IP_ADDR: "0.0.0.0"
