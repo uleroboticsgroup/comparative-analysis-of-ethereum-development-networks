@@ -32,12 +32,14 @@ CSV_FOLDER = "docker/accountability/files/csv"
 CONTAINER_ACCOUNTABILITY_NAME = 'accountability'
 CONTAINER_ANVIL_NAME = 'anvil'
 CONTAINER_GANACHE_NAME = 'ganache'
+CONTAINER_GETH_NAME = 'geth'
 CONTAINER_HARDHAT_NAME = 'hardhat'
 
 CONTAINER_NAMES = [
     CONTAINER_ACCOUNTABILITY_NAME,
     CONTAINER_ANVIL_NAME,
     CONTAINER_GANACHE_NAME,
+    CONTAINER_GETH_NAME,
     CONTAINER_HARDHAT_NAME
 ]
 
@@ -306,12 +308,9 @@ def _get_concat_metrics_by_network(folder, networks: list, conditional_function)
                 if metric == 'timestamp':
                     elapsed_seconds = pandas.to_datetime(data_frame_rosbag_metric[metric][len(data_frame_rosbag_metric[metric])-1]) - pandas.to_datetime(data_frame_rosbag_metric[metric][0])
                     metrics_by_network[metric].append(pandas.Series({index: elapsed_seconds.seconds}))
-                elif metric == 'mem_rss_bytes':
+                elif metric == 'mem_rss_bytes' or metric == 'disk_read_bytes' or metric == 'disk_write_bytes':
                     mem_rss_bytes_sum = data_frame_rosbag_metric[metric][len(data_frame_rosbag_metric[metric])-1]
                     metrics_by_network[metric].append(pandas.Series({index: mem_rss_bytes_sum}))
-                elif metric == 'disk_read_bytes' or metric == 'disk_write_bytes':
-                    disk_bytes_sum = data_frame_rosbag_metric[metric].sum()
-                    metrics_by_network[metric].append(pandas.Series({index: disk_bytes_sum}))
                 else:
                     metrics_by_network[metric].append(data_frame_rosbag_metric[metric])
             index += 1
@@ -381,7 +380,7 @@ def _manage_data():
     _build_csv("total_rosbag_metrics.csv", total_rosbag_metrics_by_network)
     _print_table("ROSBAGs", total_rosbag_metrics_by_network, _get_mean)
 
-    logging.info('\n====================================================================================\n')
+    logging.info('====================================================================================\n')
 
     total_csv_metrics_by_network = _get_concat_metrics_by_network(network_folders, networks, _get_csv_metrics_folder)
     _build_csv("total_csv_metrics.csv", total_csv_metrics_by_network)
