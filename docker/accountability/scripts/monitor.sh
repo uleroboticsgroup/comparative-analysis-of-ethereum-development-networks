@@ -78,17 +78,6 @@ if [[ ! "$OUTPUT_FOLDER" =~ ^[a-zA-Z0-9._/-]+$ ]]; then
     exit 1
 fi
 
-"$@" &
-APP_PID=$!
-
-# Ensure cleanup on exit
-cleanup() {
-    if kill -0 "$APP_PID" 2>/dev/null; then
-        kill "$APP_PID" 2>/dev/null || true
-    fi
-}
-trap cleanup EXIT INT TERM
-
 METRICS_FOLDER="metrics/${OUTPUT_FOLDER}"
 OUTPUT_FILE="${METRICS_FOLDER}/metrics_$(date +%Y%m%d_%H%M%S).csv"
 
@@ -100,12 +89,21 @@ NCPU=$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
 
 echo "timestamp,cpu_pct,mem_rss_bytes,mem_pct,disk_read_bytes,disk_write_bytes" > "$OUTPUT_FILE"
 
+"$@" &
+APP_PID=$!
+
+# Ensure cleanup on exit
+cleanup() {
+    if kill -0 "$APP_PID" 2>/dev/null; then
+        kill "$APP_PID" 2>/dev/null || true
+    fi
+}
+trap cleanup EXIT INT TERM
+
 # Initial baseline
 PREV_CPU_TOTAL=$(read_cpu_total)
 PREV_CPU_PROC=$(read_cpu_proc "$APP_PID")
 PREV_MEM_TOTAL=$(read_mem_total)
-read PREV_DISK_READ PREV_DISK_WRITE < <(read_disk_bytes "$APP_PID")
-
 
 # |---------------------------------- monitoring loop ----------------------------------|
 
@@ -139,19 +137,8 @@ while kill -0 "$APP_PID" 2>/dev/null; do
     # Disk
     read DISK_READ DISK_WRITE < <(read_disk_bytes "$APP_PID")
 
-    if [[ "$DISK_READ" -ge "$PREV_DISK_READ" && "$DISK_WRITE" -ge "$PREV_DISK_WRITE" ]]; then
-        DELTA_DISK_READ=$(( DISK_READ - PREV_DISK_READ ))
-        DELTA_DISK_WRITE=$(( DISK_WRITE - PREV_DISK_WRITE ))
-    else
-        DELTA_DISK_READ=0
-        DELTA_DISK_WRITE=0
-    fi
-
-    PREV_DISK_READ=$DISK_READ
-    PREV_DISK_WRITE=$DISK_WRITE
-
     # ----- Write CSV -----
-    echo "$timestamp,$CPU_PCT,$MEM_RSS_BYTES,$MEM_PCT,$DELTA_DISK_READ,$DELTA_DISK_WRITE" >> "$OUTPUT_FILE"
+    echo "$timestamp,$CPU_PCT,$MEM_RSS_BYTES,$MEM_PCT,$DISK_READ,$DISK_WRITE" >> "$OUTPUT_FILE"
 
     sleep "$INTERVAL"
 done
