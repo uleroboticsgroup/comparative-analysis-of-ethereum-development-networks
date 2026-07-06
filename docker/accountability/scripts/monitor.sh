@@ -2,6 +2,7 @@
 set -euo pipefail
 
 INTERVAL=1
+PAGE_SIZE=$(getconf PAGESIZE 2>/dev/null || echo 1)
 
 
 if [[ $# -lt 2 ]]; then
@@ -47,11 +48,10 @@ get_rss_bytes() {
     local pid="$1"
     [[ -r /proc/$pid/statm ]] || { echo 0; return; }
 
-    local rss page_size
-    page_size=$(getconf PAGESIZE)
+    local rss
     rss=$(awk '{print $2}' /proc/$pid/statm 2>/dev/null)
     rss=${rss:-0}
-    echo $(( rss * page_size ))
+    echo $(( rss * $PAGE_SIZE ))
 }
 
 # Read disk read/write bytes for a single PID
@@ -60,8 +60,8 @@ read_disk_bytes() {
     [[ -r /proc/$pid/io ]] || { echo "0 0"; return; }
 
     local read_bytes write_bytes
-    read_bytes=$(awk '/read_bytes/ {print $2}' /proc/$pid/io 2>/dev/null)
-    write_bytes=$(awk '/write_bytes/ {print $2}' /proc/$pid/io 2>/dev/null)
+    read_bytes=$(awk '/rchar/ {print $2}' /proc/$pid/io 2>/dev/null)
+    write_bytes=$(awk '/wchar/ {print $2}' /proc/$pid/io 2>/dev/null)
     read_bytes=${read_bytes:-0}
     write_bytes=${write_bytes:-0}
     echo "$read_bytes $write_bytes"
@@ -87,7 +87,7 @@ mkdir -p "$METRICS_FOLDER"
 NCPU=$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
 [[ "$NCPU" -gt 0 ]] || NCPU=1
 
-echo "timestamp,cpu_pct,mem_rss_bytes,mem_pct,disk_read_bytes,disk_write_bytes" > "$OUTPUT_FILE"
+echo "timestamp,cpu_pct,mem_rss_bytes,mem_pct,disk_rchar,disk_wchar" > "$OUTPUT_FILE"
 
 "$@" &
 APP_PID=$!
