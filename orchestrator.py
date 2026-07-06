@@ -2,6 +2,7 @@ import argparse
 import logging
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -49,19 +50,33 @@ METRICS = [
     'cpu_pct', 
     'mem_rss_bytes', 
     'mem_pct', 
-    'disk_read_bytes', 
-    'disk_write_bytes'
+    'disk_rchar', 
+    'disk_wchar'
 ]
 ROUND_DIGITS = 3
+
+LOGS_FOLDER="docker/compose/data/logs"
+DATA = [
+    'records',
+    'gas'
+]
 
 COLUMNS_OUTPUT_CSV = ['network',
                       'time', 
                       'cpu_pct_min',            'cpu_pct_max',          'cpu_pct_mean', 
                       'mem_rss_bytes_mean',
                       'mem_pct_min',            'mem_pct_max',          'mem_pct_mean',
-                      'disk_read_bytes_mean',
-                      'disk_write_bytes_mean'
+                      'disk_rchar_mean',
+                      'disk_wchar_mean',
+                      'records',
+                      'gas'
                      ]
+
+ROSBAG_HEADER = 'ROSBAGs'
+OBD_CSV_HEADER = 'OBD CSVs'
+
+ROSBAG_CSV_FILE = 'rosbag_data.csv'
+OBD_CSV_FILE = 'obd_csv_data.csv'
 
 
 def _get_directories_from_folder(path: str):
@@ -267,15 +282,70 @@ def _run_containers(docker_client):
         sys.exit()
 
 
-def _get_rosbag_metrics_folder(file):
+def _get_rosbag_folder(file):
     return file.is_dir() and '.csv' not in file.path
 
 
-def _get_csv_metrics_folder(file):
+def _get_csv_folder(file):
     return file.is_dir() and '.csv' in file.path
 
 
-def _get_concat_metrics_by_network(folder, networks: list, conditional_function):
+def _get_value_from_regex(line: str, regex: str, group_name: str):
+    records_re = re.compile(regex, re.I)
+
+    num_records_re = records_re.search(line)
+    if num_records_re:
+        num_records_group = num_records_re.groupdict()
+        return num_records_group.pop(group_name)
+
+    return ""
+
+
+def _get_data_from_folder(data_by_network, index, metrics_folder):
+    log_folder = metrics_folder.replace('metrics', 'logs')
+    log_file_name = os.listdir(log_folder)[0]
+    log_file = os.path.join(log_folder, log_file_name)
+
+    with open(log_file, 'rb') as file:
+        lines = file.readlines()
+        last_lines = lines[-6::]
+
+    records_line = last_lines[0].decode('utf-8')
+    gas_line = last_lines[5].decode('utf-8')
+
+
+    records = _get_value_from_regex(records_line, r'"bbtR":\s(?P<num_records>\d+),', 'num_records')
+    data_by_network['records'].append(pandas.Series({index: int(records)}))
+
+    gas = _get_value_from_regex(gas_line, r'Ether needed:\s(?P<gas>.+)', 'gas')
+    data_by_network['gas'].append(pandas.Series({index: float(gas)}))
+
+    return data_by_network
+
+
+def _get_metrics_from_folder(data_by_network, index, metrics_folder):
+    metrics_file = os.listdir(metrics_folder)[0]
+    metrics_csv = os.path.join(metrics_folder, metrics_file)
+    data_frame_metrics = pandas.read_csv(metrics_csv)
+
+    for metric in METRICS:
+        if metric == 'timestamp':
+            starting_time = pandas.to_datetime(data_frame_metrics[metric][0])
+            ending_time = pandas.to_datetime(data_frame_metrics[metric][len(data_frame_metrics[metric])-1])
+            elapsed_seconds = ending_time - starting_time
+            data_by_network[metric].append(pandas.Series({index: elapsed_seconds.seconds}))
+
+        elif metric == 'mem_rss_bytes' or metric == 'disk_rchar' or metric == 'disk_wchar':
+            addition_metric = data_frame_metrics[metric][len(data_frame_metrics[metric])-1]
+            data_by_network[metric].append(pandas.Series({index: addition_metric}))
+
+        else:
+            data_by_network[metric].append(data_frame_metrics[metric])
+
+    return data_by_network
+
+
+def _get_concat_data_by_network(folder, networks: list, conditional_function):
     if len(networks) == 0:
         logging.error('The list of networks is empty')
         return []
@@ -284,44 +354,38 @@ def _get_concat_metrics_by_network(folder, networks: list, conditional_function)
         logging.error('The conditional_function is not valid')
         return []
 
-    total_metrics_by_network = {network: {metric: [] for metric in METRICS} for network in networks}
+    metrics_and_data = METRICS + DATA
+    total_data_by_network = { network: { 
+                                metric: [] for metric in metrics_and_data
+                              } for network in networks }
 
     network_index = 0
-    for metrics_folders_by_network in folder:
+    for metric_folders_by_network in folder:
         if network_index >= len(networks):
             break
-        
+
         network = networks[network_index]
-        if network not in metrics_folders_by_network:
+        if network not in metric_folders_by_network:
             continue
 
-        metrics_by_network = {metric: [] for metric in METRICS}
+        data_by_network = { metric: [] for metric in metrics_and_data}
 
-        rosbags_metrics_folders = [file.path for file in os.scandir(metrics_folders_by_network)
-                                    if conditional_function(file)]
+        conditional_metric_folders = [file.path for file in os.scandir(metric_folders_by_network)
+                                        if conditional_function(file)]
         index = 0
-        for rosbag_metric_folder in rosbags_metrics_folders:
-            rosbag_metrics_file = os.listdir(rosbag_metric_folder)[0]
-            rosbag_metric_csv = os.path.join(rosbag_metric_folder, rosbag_metrics_file)
-            data_frame_rosbag_metric = pandas.read_csv(rosbag_metric_csv)
-            for metric in METRICS:
-                if metric == 'timestamp':
-                    elapsed_seconds = pandas.to_datetime(data_frame_rosbag_metric[metric][len(data_frame_rosbag_metric[metric])-1]) - pandas.to_datetime(data_frame_rosbag_metric[metric][0])
-                    metrics_by_network[metric].append(pandas.Series({index: elapsed_seconds.seconds}))
-                elif metric == 'mem_rss_bytes' or metric == 'disk_read_bytes' or metric == 'disk_write_bytes':
-                    mem_rss_bytes_sum = data_frame_rosbag_metric[metric][len(data_frame_rosbag_metric[metric])-1]
-                    metrics_by_network[metric].append(pandas.Series({index: mem_rss_bytes_sum}))
-                else:
-                    metrics_by_network[metric].append(data_frame_rosbag_metric[metric])
+        for metrics_folder in conditional_metric_folders:
+            data_by_network = _get_metrics_from_folder(data_by_network, index, metrics_folder)
+            data_by_network = _get_data_from_folder(data_by_network, index, metrics_folder)
+
             index += 1
 
-        for metric in METRICS:
+        for data in metrics_and_data:
             # Concatenate pandas objects along a particular axis
-            total_metrics_by_network[network][metric] = pandas.concat(metrics_by_network[metric], ignore_index=False)
+            total_data_by_network[network][data] = pandas.concat(data_by_network[data])
 
         network_index += 1
 
-    return total_metrics_by_network
+    return total_data_by_network
 
 
 def _get_min(value: float):
@@ -339,12 +403,12 @@ def _get_mean(value: float):
 def _print_table(header: str, metrics_dictionary: dict, value_function):
     table = PrettyTable()
     table.title = header
-    table.field_names = ["network"] + METRICS
+    table.field_names = ["network"] + METRICS + DATA
 
     for network in metrics_dictionary.keys():
         mean_metrics = [network]
-        for metric in METRICS:
-            mean_metrics.append(value_function(metrics_dictionary[network][metric]))
+        for data in METRICS + DATA:
+            mean_metrics.append(value_function(metrics_dictionary[network][data]))
 
         table.add_row(mean_metrics)
 
@@ -353,38 +417,40 @@ def _print_table(header: str, metrics_dictionary: dict, value_function):
 
 def _build_csv(csv_file_name: str, metrics_dictionary: dict):
     columns = COLUMNS_OUTPUT_CSV
-    metrics_array = []
+    data_array = []
 
     for network in metrics_dictionary.keys():
-        network_metrics = [network]
-        for metric in metrics_dictionary[network].keys():
-            if metric == 'cpu_pct' or metric == 'mem_pct':
-                network_metrics.append(_get_min(metrics_dictionary[network][metric]))
-                network_metrics.append(_get_max(metrics_dictionary[network][metric]))
+        network_data = [network]
+        for data in metrics_dictionary[network].keys():
+            if data == 'cpu_pct' or data == 'mem_pct':
+                network_data.append(_get_min(metrics_dictionary[network][data]))
+                network_data.append(_get_max(metrics_dictionary[network][data]))
 
-            network_metrics.append(_get_mean(metrics_dictionary[network][metric].mean()))
+            network_data.append(_get_mean(metrics_dictionary[network][data].mean()))
 
-        metrics_array.append(network_metrics)
-        df = pandas.DataFrame(metrics_array, columns=columns)
+        data_array.append(network_data)
+        df = pandas.DataFrame(data_array, columns=columns)
         df.to_csv(csv_file_name, index=False)
 
 
 def _manage_data():
-    network_folders = _get_directories_from_folder(METRICS_FOLDER)
-    networks = [network.split("/")[len(network.split("/"))-1] for network in network_folders]
+    network_metric_folders = _get_directories_from_folder(METRICS_FOLDER)
+    networks = [net.split("/")[len(net.split("/"))-1] for net in network_metric_folders]
     if len(networks) == 0:
         logging.error('There is no data available for treatment.')
         return
 
-    total_rosbag_metrics_by_network = _get_concat_metrics_by_network(network_folders, networks, _get_rosbag_metrics_folder)
-    _build_csv("total_rosbag_metrics.csv", total_rosbag_metrics_by_network)
-    _print_table("ROSBAGs", total_rosbag_metrics_by_network, _get_mean)
+    rosbag_data_by_network = _get_concat_data_by_network(network_metric_folders,
+                                                         networks,
+                                                         _get_rosbag_folder)
+    _build_csv(ROSBAG_CSV_FILE, rosbag_data_by_network)
+    _print_table(ROSBAG_HEADER, rosbag_data_by_network, _get_mean)
 
-    logging.info('====================================================================================\n')
-
-    total_csv_metrics_by_network = _get_concat_metrics_by_network(network_folders, networks, _get_csv_metrics_folder)
-    _build_csv("total_csv_metrics.csv", total_csv_metrics_by_network)
-    _print_table("CSVs", total_csv_metrics_by_network, _get_mean)
+    obd_data_by_network = _get_concat_data_by_network(network_metric_folders,
+                                                      networks,
+                                                      _get_csv_folder)
+    _build_csv(OBD_CSV_FILE, obd_data_by_network)
+    _print_table(OBD_CSV_HEADER, obd_data_by_network, _get_mean)
 
 
 def _execute_script(arguments):
