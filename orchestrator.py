@@ -301,10 +301,35 @@ def _get_value_from_regex(line: str, regex: str, group_name: str):
     return ""
 
 
+def _fill_empty_data(data_by_network, index):
+    data_by_network['records'].append(pandas.Series({index: int(0)}))
+    data_by_network['gas'].append(pandas.Series({index: float(0)}))
+
+    return data_by_network
+
+
 def _get_data_from_folder(data_by_network, index, metrics_folder):
     log_folder = metrics_folder.replace('metrics', 'logs')
-    log_file_name = os.listdir(log_folder)[0]
+    if not os.path.exists(log_folder):
+        logging.error("The logs folder %s does not exist", log_folder)
+        _fill_empty_data(data_by_network, index)
+
+        return data_by_network
+
+    folders_list = os.listdir(log_folder)
+    if len(folders_list) == 0:
+        logging.error("There are not folders in %s", log_folder)
+        _fill_empty_data(data_by_network, index)
+
+        return data_by_network
+
+    log_file_name = folders_list[0]
     log_file = os.path.join(log_folder, log_file_name)
+    if not os.path.exists(log_file) or ".txt" not in log_file:
+        logging.error("There is some problem with log file %s", log_file)
+        _fill_empty_data(data_by_network, index)
+
+        return data_by_network
 
     with open(log_file, 'rb') as file:
         lines = file.readlines()
@@ -312,7 +337,6 @@ def _get_data_from_folder(data_by_network, index, metrics_folder):
 
     records_line = last_lines[0].decode('utf-8')
     gas_line = last_lines[5].decode('utf-8')
-
 
     records = _get_value_from_regex(records_line, r'"bbtR":\s(?P<num_records>\d+),', 'num_records')
     data_by_network['records'].append(pandas.Series({index: int(records)}))
@@ -323,8 +347,28 @@ def _get_data_from_folder(data_by_network, index, metrics_folder):
     return data_by_network
 
 
+def _fill_empty_metrics(data_by_network, index):
+    for metric in METRICS:
+        data_by_network[metric].append(pandas.Series({index: 0}))
+
+    return data_by_network
+
+
 def _get_metrics_from_folder(data_by_network, index, metrics_folder):
-    metrics_file = os.listdir(metrics_folder)[0]
+    folders_list = os.listdir(metrics_folder)
+    if len(folders_list) == 0:
+        logging.error("There are not folders in %s", metrics_folder)
+        _fill_empty_metrics(data_by_network, index)
+
+        return data_by_network
+
+    metrics_file = folders_list[0]
+    if ".csv" not in metrics_file:
+        logging.error("The file %s is not a CSV", metrics_file)
+        _fill_empty_metrics(data_by_network, index)
+
+        return data_by_network
+
     metrics_csv = os.path.join(metrics_folder, metrics_file)
     data_frame_metrics = pandas.read_csv(metrics_csv)
 
@@ -355,9 +399,7 @@ def _get_concat_data_by_network(folder, networks: list, conditional_function):
         return []
 
     metrics_and_data = METRICS + DATA
-    total_data_by_network = { network: { 
-                                metric: [] for metric in metrics_and_data
-                              } for network in networks }
+    total_data_by_network = {}
 
     network_index = 0
     for metric_folders_by_network in folder:
@@ -372,16 +414,27 @@ def _get_concat_data_by_network(folder, networks: list, conditional_function):
 
         conditional_metric_folders = [file.path for file in os.scandir(metric_folders_by_network)
                                         if conditional_function(file)]
+
+        if len(conditional_metric_folders) == 0:
+            network_index += 1
+            continue
+
         index = 0
-        for metrics_folder in conditional_metric_folders:
-            data_by_network = _get_metrics_from_folder(data_by_network, index, metrics_folder)
-            data_by_network = _get_data_from_folder(data_by_network, index, metrics_folder)
+        try:
+            for metrics_folder in conditional_metric_folders:
+                data_by_network = _get_metrics_from_folder(data_by_network, index, metrics_folder)
+                data_by_network = _get_data_from_folder(data_by_network, index, metrics_folder)
 
-            index += 1
+                index += 1
 
-        for data in metrics_and_data:
-            # Concatenate pandas objects along a particular axis
-            total_data_by_network[network][data] = pandas.concat(data_by_network[data])
+            total_data_by_network[network] = { metric: [] for metric in metrics_and_data }
+
+            for data in metrics_and_data:
+                # Concatenate pandas objects along a particular axis
+                total_data_by_network[network][data] = pandas.concat(data_by_network[data])
+
+        except NotADirectoryError:
+            logging.error("There are not dirs in some folder of %s", conditional_metric_folders)
 
         network_index += 1
 
