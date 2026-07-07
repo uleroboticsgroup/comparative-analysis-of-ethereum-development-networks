@@ -325,7 +325,7 @@ def _get_data_from_folder(data_by_network, index, metrics_folder):
 
     log_file_name = folders_list[0]
     log_file = os.path.join(log_folder, log_file_name)
-    if not os.path.exists(log_file) or ".txt" not in log_file:
+    if not os.path.exists(log_file) or ".log" not in log_file:
         logging.error("There is some problem with log file %s", log_file)
         _fill_empty_data(data_by_network, index)
 

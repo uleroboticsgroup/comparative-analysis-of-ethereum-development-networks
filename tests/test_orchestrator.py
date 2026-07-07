@@ -31,6 +31,7 @@ def test_get_concat_data_by_network_when_network_is_empty(caplog):
     assert 'The list of networks is empty' in caplog.text
     assert total_metrics == []
 
+
 def test_get_concat_data_by_network_when_conditional_funct_is_not_defined(caplog):
     folder = orchestrator._get_directories_from_folder('./tests/fake_folder')
     networks = ['anvil', 'geth', 'geth', 'hardhat']
@@ -40,6 +41,7 @@ def test_get_concat_data_by_network_when_conditional_funct_is_not_defined(caplog
 
     assert 'The conditional_function is not valid' in caplog.text
     assert total_metrics == []
+
 
 def test_get_concat_data_by_network_when_conditional_funct_is_empty(caplog):
     folder = orchestrator._get_directories_from_folder('./tests/fake_folder')
@@ -99,6 +101,7 @@ def test_get_concat_data_by_network_when_anvil_network_contains_valid_rosbag_met
     assert total_metrics['anvil']['records'].mean().round(2) == 2087
     assert total_metrics['anvil']['gas'].mean().round(2) == 2.89
 
+
 def test_get_concat_data_by_network_when_geth_network_contains_valid_rosbag_metrics():
     """
     timestamp,cpu_pct,mem_rss_bytes,mem_pct,disk_rchar,disk_wchar
@@ -146,6 +149,7 @@ def test_get_concat_data_by_network_when_geth_network_contains_valid_rosbag_metr
     assert total_metrics['geth']['disk_wchar'].mean().round(2) == 11763074
     assert total_metrics['geth']['records'].mean().round(2) == 2087
     assert total_metrics['geth']['gas'].mean().round(2) == 0.16
+
 
 def test_get_concat_data_by_network_when_anvil_and_geth_networks_contains_valid_rosbag_metrics():
     """
