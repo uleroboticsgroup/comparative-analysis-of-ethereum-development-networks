@@ -80,37 +80,34 @@ After execute the `orchestrator.py` script, the following command can be execute
 (.venv) python3 orchestrator.py -d
 ```
 
-The metrics stored in the `docker/compose/data/metrics/` directory will be processed according to the network and file type (rosbag or CSV) in order to obtain ACOLYTE performance and timing data, depending on the network and file type. Output example:
+The metrics stored in the `docker/compose/data/metrics/` directory, as well as some data stored in the `docker/compose/data/logs/` directory, will be processed according to the network and file type (rosbag or CSV) in order to obtain ACOLYTE performance and timing data, depending on the network and file type. Output example:
 
 ```
 INFO:root:Starting orchestrator...
-INFO:root:+----------------------------------------------------------------------------------------------+
-|                                           ROSBAGs                                            |
-+---------+-----------+---------+---------------+---------+-----------------+------------------+
-| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct | disk_read_bytes | disk_write_bytes |
-+---------+-----------+---------+---------------+---------+-----------------+------------------+
-| hardhat |   19.333  |  52.964 | 195934435.556 |  0.629  |  211242097.778  |   11852458.667   |
-|   geth  |   27.556  |  37.488 | 195585365.333 |  0.642  |  174607473.778  |   11850638.222   |
-| ganache |  175.222  |  7.301  | 221339192.889 |  0.669  |    534300.444   |   11920725.333   |
-|  anvil  |   26.889  |  38.094 | 195802453.333 |  0.642  |  201991964.444  |   11852003.556   |
-+---------+-----------+---------+---------------+---------+-----------------+------------------+
-INFO:root:
-====================================================================================
-
-INFO:root:+----------------------------------------------------------------------------------------------+
-|                                             CSVs                                             |
-+---------+-----------+---------+---------------+---------+-----------------+------------------+
-| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct | disk_read_bytes | disk_write_bytes |
-+---------+-----------+---------+---------------+---------+-----------------+------------------+
-| hardhat |   17.897  |  74.758 | 189753414.621 |  0.567  |    118360.276   |   12430230.069   |
-|   geth  |   21.483  |  62.393 | 197425081.379 |  0.574  |    102258.759   |   12442941.793   |
-| ganache |  175.828  |  9.867  | 198900206.345 |  0.605  |    195195.586   |   12497319.724   |
-|  anvil  |   20.276  |  66.13  |  197373952.0  |  0.576  |    195195.586   |   12436444.69    |
-+---------+-----------+---------+---------------+---------+-----------------+------------------+
+INFO:root:+------------------------------------------------------------------------------------------------------+
+|                                               ROSBAGs                                                |
++---------+-----------+---------+---------------+---------+-------------+------------+---------+-------+
+| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct |  disk_rchar | disk_wchar | records |  gas  |
++---------+-----------+---------+---------------+---------+-------------+------------+---------+-------+
+| hardhat |    21.0   |  55.249 |  223021056.0  |  0.643  | 510253101.5 | 11764782.5 |  3085.5 | 1.765 |
+|   geth  |    30.5   |  38.371 |  219889664.0  |  0.644  | 511200778.0 | 11765388.0 |  3085.5 | 0.158 |
+| ganache |   203.5   |  7.239  |  221460480.0  |   0.67  | 510253066.0 | 11764781.5 |  3085.5 | 2.672 |
+|  anvil  |    29.5   |  38.837 |  220104704.0  |  0.645  | 511200847.0 | 11765070.0 |  3085.5 | 2.825 |
++---------+-----------+---------+---------------+---------+-------------+------------+---------+-------+
+INFO:root:+-----------------------------------------------------------------------------------------------------+
+|                                               OBD CSVs                                              |
++---------+-----------+---------+---------------+---------+------------+------------+---------+-------+
+| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct | disk_rchar | disk_wchar | records |  gas  |
++---------+-----------+---------+---------------+---------+------------+------------+---------+-------+
+| hardhat |    17.5   |  73.083 |  194717696.0  |  0.563  | 30885966.0 | 11749370.0 |  4360.5 | 0.633 |
+|   geth  |    21.0   |  62.077 |  194172928.0  |  0.564  | 30886030.5 | 11749321.0 |  4360.5 | 0.093 |
+| ganache |   175.5   |   9.6   |  194224128.0  |  0.587  | 30886048.5 | 11749102.5 |  4360.5 | 0.731 |
+|  anvil  |    20.0   |  63.814 |  199383040.0  |  0.577  | 30886118.5 | 11748545.5 |  4360.5 | 0.759 |
++---------+-----------+---------+---------------+---------+------------+------------+---------+-------+
 INFO:root:Stopping orchestrator
 ```
 
-Furthermore, two CSV files are stored: one relating to rosbags and one relating to CSV files. These include the minimum, maximum and mean values of each percentage metric, as well as the mean of the metrics and the execution time for each network.
+Furthermore, two CSV files are stored: one relating to rosbags (`rosbag_data.csv`) and one relating to CSV files (`obd_csv_data.csv`). These include the minimum, maximum and mean values of each percentage metric, as well as the mean of the metrics and the execution time for each network.
 
 ## Logging
 
