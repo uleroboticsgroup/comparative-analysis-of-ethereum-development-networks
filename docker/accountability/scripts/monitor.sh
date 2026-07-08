@@ -2,6 +2,7 @@
 set -euo pipefail
 
 INTERVAL=1
+PAGE_SIZE=$(getconf PAGESIZE 2>/dev/null || echo 1)
 
 
 if [[ $# -lt 2 ]]; then
@@ -47,11 +48,10 @@ get_rss_bytes() {
     local pid="$1"
     [[ -r /proc/$pid/statm ]] || { echo 0; return; }
 
-    local rss page_size
-    page_size=$(getconf PAGESIZE)
+    local rss
     rss=$(awk '{print $2}' /proc/$pid/statm 2>/dev/null)
     rss=${rss:-0}
-    echo $(( rss * page_size ))
+    echo $(( rss * $PAGE_SIZE ))
 }
 
 # Read disk read/write bytes for a single PID
@@ -60,8 +60,8 @@ read_disk_bytes() {
     [[ -r /proc/$pid/io ]] || { echo "0 0"; return; }
 
     local read_bytes write_bytes
-    read_bytes=$(awk '/read_bytes/ {print $2}' /proc/$pid/io 2>/dev/null)
-    write_bytes=$(awk '/write_bytes/ {print $2}' /proc/$pid/io 2>/dev/null)
+    read_bytes=$(awk '/rchar/ {print $2}' /proc/$pid/io 2>/dev/null)
+    write_bytes=$(awk '/wchar/ {print $2}' /proc/$pid/io 2>/dev/null)
     read_bytes=${read_bytes:-0}
     write_bytes=${write_bytes:-0}
     echo "$read_bytes $write_bytes"
@@ -78,6 +78,17 @@ if [[ ! "$OUTPUT_FOLDER" =~ ^[a-zA-Z0-9._/-]+$ ]]; then
     exit 1
 fi
 
+METRICS_FOLDER="metrics/${OUTPUT_FOLDER}"
+OUTPUT_FILE="${METRICS_FOLDER}/metrics_$(date +%Y%m%d_%H%M%S).csv"
+
+mkdir -p "$METRICS_FOLDER"
+
+# CPU count
+NCPU=$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
+[[ "$NCPU" -gt 0 ]] || NCPU=1
+
+echo "timestamp,cpu_pct,mem_rss_bytes,mem_pct,disk_rchar,disk_wchar" > "$OUTPUT_FILE"
+
 "$@" &
 APP_PID=$!
 
@@ -89,23 +100,10 @@ cleanup() {
 }
 trap cleanup EXIT INT TERM
 
-METRICS_FOLDER="metrics/${OUTPUT_FOLDER}"
-OUTPUT_FILE="${METRICS_FOLDER}/metrics_$(date +%Y%m%d_%H%M%S).csv"
-
-mkdir -p "$METRICS_FOLDER"
-
-# CPU count
-NCPU=$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
-[[ "$NCPU" -gt 0 ]] || NCPU=1
-
-echo "timestamp,cpu_pct,mem_rss_bytes,mem_pct,disk_read_bytes,disk_write_bytes" > "$OUTPUT_FILE"
-
 # Initial baseline
 PREV_CPU_TOTAL=$(read_cpu_total)
 PREV_CPU_PROC=$(read_cpu_proc "$APP_PID")
 PREV_MEM_TOTAL=$(read_mem_total)
-read PREV_DISK_READ PREV_DISK_WRITE < <(read_disk_bytes "$APP_PID")
-
 
 # |---------------------------------- monitoring loop ----------------------------------|
 
@@ -139,19 +137,8 @@ while kill -0 "$APP_PID" 2>/dev/null; do
     # Disk
     read DISK_READ DISK_WRITE < <(read_disk_bytes "$APP_PID")
 
-    if [[ "$DISK_READ" -ge "$PREV_DISK_READ" && "$DISK_WRITE" -ge "$PREV_DISK_WRITE" ]]; then
-        DELTA_DISK_READ=$(( DISK_READ - PREV_DISK_READ ))
-        DELTA_DISK_WRITE=$(( DISK_WRITE - PREV_DISK_WRITE ))
-    else
-        DELTA_DISK_READ=0
-        DELTA_DISK_WRITE=0
-    fi
-
-    PREV_DISK_READ=$DISK_READ
-    PREV_DISK_WRITE=$DISK_WRITE
-
     # ----- Write CSV -----
-    echo "$timestamp,$CPU_PCT,$MEM_RSS_BYTES,$MEM_PCT,$DELTA_DISK_READ,$DELTA_DISK_WRITE" >> "$OUTPUT_FILE"
+    echo "$timestamp,$CPU_PCT,$MEM_RSS_BYTES,$MEM_PCT,$DISK_READ,$DISK_WRITE" >> "$OUTPUT_FILE"
 
     sleep "$INTERVAL"
 done

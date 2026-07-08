@@ -1,0 +1,11 @@
+2026-07-06 11:09:09,843::bcubed.blockchain.network::INFO::OD record was retrieved
+2026-07-06 11:09:09,844::bcubed.blockchain.network::INFO::{
+    "typR": 3,
+    "fieN": 6,
+    "recT": 1783336149791,
+    "bbtR": 4084,
+    "iniT": 1774264331976,
+    "finT": 1774264347569
+}
+2026-07-06 11:09:09,844::acolyte.acolyte::INFO::Final account balance: 9998.161342862288529978
+2026-07-06 11:09:09,845::acolyte.acolyte::INFO::Ether needed: 1.834444561594470022
