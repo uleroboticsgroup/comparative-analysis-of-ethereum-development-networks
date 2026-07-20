@@ -58,7 +58,8 @@ ROUND_DIGITS = 3
 LOGS_FOLDER="docker/compose/data/logs"
 DATA = [
     'records',
-    'gas'
+#    'gas',
+    'time_by_record'
 ]
 
 COLUMNS_OUTPUT_CSV = ['network',
@@ -69,7 +70,8 @@ COLUMNS_OUTPUT_CSV = ['network',
                       'disk_rchar_mean',
                       'disk_wchar_mean',
                       'records',
-                      'gas'
+#                      'gas',
+                      'time_by_record'
                      ]
 
 ROSBAG_HEADER = 'ROSBAGs'
@@ -303,7 +305,8 @@ def _get_value_from_regex(line: str, regex: str, group_name: str):
 
 def _fill_empty_data(data_by_network, index):
     data_by_network['records'].append(pandas.Series({index: int(0)}))
-    data_by_network['gas'].append(pandas.Series({index: float(0)}))
+#    data_by_network['gas'].append(pandas.Series({index: float(0)}))
+    data_by_network['time_by_record'].append(pandas.Series({index: float(0)}))
 
     return data_by_network
 
@@ -336,13 +339,17 @@ def _get_data_from_folder(data_by_network, index, metrics_folder):
         last_lines = lines[-6::]
 
     records_line = last_lines[0].decode('utf-8')
-    gas_line = last_lines[5].decode('utf-8')
+#    gas_line = last_lines[5].decode('utf-8')
 
     records = _get_value_from_regex(records_line, r'"bbtR":\s(?P<num_records>\d+),', 'num_records')
     data_by_network['records'].append(pandas.Series({index: int(records)}))
 
-    gas = _get_value_from_regex(gas_line, r'Ether needed:\s(?P<gas>.+)', 'gas')
-    data_by_network['gas'].append(pandas.Series({index: float(gas)}))
+#    gas = _get_value_from_regex(gas_line, r'Ether needed:\s(?P<gas>.+)', 'gas')
+#    data_by_network['gas'].append(pandas.Series({index: float(gas)}))
+
+    elapsed_time = data_by_network['timestamp'][len(data_by_network['timestamp'])-1].iloc[0]
+    time_by_record = elapsed_time / int(records)
+    data_by_network['time_by_record'].append(pandas.Series({index: float(time_by_record)}))
 
     return data_by_network
 
