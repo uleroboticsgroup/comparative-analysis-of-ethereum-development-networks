@@ -1,7 +1,9 @@
 docker==7.1.0
+jinja2==3.1.6       # pyyaml dependency
 lark==1.3.1
 pandas==2.3.3
 pytest==8.4.2
 pytest-cov==7.1.0
 pyyaml==6.0.3
 prettytable==3.18.0
+typeguard==4.5.2    # pyyaml dependency
