@@ -92,14 +92,15 @@ def test_get_concat_data_by_network_when_anvil_network_contains_valid_rosbag_met
 
     total_metrics = orchestrator._get_concat_data_by_network(folder, networks, conditional_funct)
 
-    assert total_metrics['anvil']['timestamp'].mean().round(2) == 26
+    assert total_metrics['anvil']['timestamp'].mean() == 26
     assert total_metrics['anvil']['cpu_pct'].mean().round(2) == 35.34
-    assert total_metrics['anvil']['mem_rss_bytes'].mean().round(2) == 220422144
+    assert total_metrics['anvil']['mem_rss_bytes'].mean() == 220422144
     assert total_metrics['anvil']['mem_pct'].mean().round(2) == 0.64
-    assert total_metrics['anvil']['disk_rchar'].mean().round(2) == 625822877
-    assert total_metrics['anvil']['disk_wchar'].mean().round(2) == 11762558
-    assert total_metrics['anvil']['records'].mean().round(2) == 2087
-    assert total_metrics['anvil']['gas'].mean().round(2) == 2.89
+    assert total_metrics['anvil']['disk_rchar'].mean() == 625822877
+    assert total_metrics['anvil']['disk_wchar'].mean() == 11762558
+    assert total_metrics['anvil']['records'].mean() == 2087
+#    assert total_metrics['anvil']['gas'].mean().round(2) == 2.89
+    assert total_metrics['anvil']['time_by_record'].mean().round(3) == 0.012
 
 
 def test_get_concat_data_by_network_when_geth_network_contains_valid_rosbag_metrics():
@@ -141,14 +142,15 @@ def test_get_concat_data_by_network_when_geth_network_contains_valid_rosbag_metr
 
     total_metrics = orchestrator._get_concat_data_by_network(folder, networks, conditional_funct)
 
-    assert total_metrics['geth']['timestamp'].mean().round(2) == 26
+    assert total_metrics['geth']['timestamp'].mean() == 26
     assert total_metrics['geth']['cpu_pct'].mean().round(2) == 34.51
-    assert total_metrics['geth']['mem_rss_bytes'].mean().round(2) == 220217344
+    assert total_metrics['geth']['mem_rss_bytes'].mean() == 220217344
     assert total_metrics['geth']['mem_pct'].mean().round(2) == 0.64
-    assert total_metrics['geth']['disk_rchar'].mean().round(2) == 625822814
-    assert total_metrics['geth']['disk_wchar'].mean().round(2) == 11763074
-    assert total_metrics['geth']['records'].mean().round(2) == 2087
-    assert total_metrics['geth']['gas'].mean().round(2) == 0.16
+    assert total_metrics['geth']['disk_rchar'].mean() == 625822814
+    assert total_metrics['geth']['disk_wchar'].mean() == 11763074
+    assert total_metrics['geth']['records'].mean() == 2087
+#    assert total_metrics['geth']['gas'].mean().round(2) == 0.16
+    assert total_metrics['geth']['time_by_record'].mean().round(3) == 0.012
 
 
 def test_get_concat_data_by_network_when_anvil_and_geth_networks_contains_valid_rosbag_metrics():
@@ -223,23 +225,25 @@ def test_get_concat_data_by_network_when_anvil_and_geth_networks_contains_valid_
 
     total_metrics = orchestrator._get_concat_data_by_network(folder, networks, conditional_funct)
 
-    assert total_metrics['anvil']['timestamp'].mean().round(2) == 26
+    assert total_metrics['anvil']['timestamp'].mean() == 26
     assert total_metrics['anvil']['cpu_pct'].mean().round(2) == 35.34
-    assert total_metrics['anvil']['mem_rss_bytes'].mean().round(2) == 220422144
+    assert total_metrics['anvil']['mem_rss_bytes'].mean() == 220422144
     assert total_metrics['anvil']['mem_pct'].mean().round(2) == 0.64
-    assert total_metrics['anvil']['disk_rchar'].mean().round(2) == 625822877
-    assert total_metrics['anvil']['disk_wchar'].mean().round(2) == 11762558
-    assert total_metrics['anvil']['records'].mean().round(2) == 2087
-    assert total_metrics['anvil']['gas'].mean().round(2) == 2.89
+    assert total_metrics['anvil']['disk_rchar'].mean() == 625822877
+    assert total_metrics['anvil']['disk_wchar'].mean() == 11762558
+    assert total_metrics['anvil']['records'].mean() == 2087
+#    assert total_metrics['anvil']['gas'].mean().round(2) == 2.89
+    assert total_metrics['anvil']['time_by_record'].mean().round(3) == 0.012
 
-    assert total_metrics['geth']['timestamp'].mean().round(2) == 26
+    assert total_metrics['geth']['timestamp'].mean() == 26
     assert total_metrics['geth']['cpu_pct'].mean().round(2) == 34.51
-    assert total_metrics['geth']['mem_rss_bytes'].mean().round(2) == 220217344
+    assert total_metrics['geth']['mem_rss_bytes'].mean() == 220217344
     assert total_metrics['geth']['mem_pct'].mean().round(2) == 0.64
-    assert total_metrics['geth']['disk_rchar'].mean().round(2) == 625822814
-    assert total_metrics['geth']['disk_wchar'].mean().round(2) == 11763074
-    assert total_metrics['geth']['records'].mean().round(2) == 2087
-    assert total_metrics['geth']['gas'].mean().round(2) == 0.16
+    assert total_metrics['geth']['disk_rchar'].mean() == 625822814
+    assert total_metrics['geth']['disk_wchar'].mean() == 11763074
+    assert total_metrics['geth']['records'].mean() == 2087
+#    assert total_metrics['geth']['gas'].mean().round(2) == 0.16
+    assert total_metrics['geth']['time_by_record'].mean().round(3) == 0.012
 
 
 def test_get_concat_data_by_network_when_hardhat_network_contains_valid_rosbags_metrics():
@@ -304,14 +308,15 @@ def test_get_concat_data_by_network_when_hardhat_network_contains_valid_rosbags_
 
     total_metrics = orchestrator._get_concat_data_by_network(folder, networks, conditional_funct)
 
-    assert total_metrics['hardhat']['timestamp'].mean().round(2) == 21
+    assert total_metrics['hardhat']['timestamp'].mean() == 21
     assert total_metrics['hardhat']['cpu_pct'].mean().round(2) == 55.25
-    assert total_metrics['hardhat']['mem_rss_bytes'].mean().round(2) == 223021056
+    assert total_metrics['hardhat']['mem_rss_bytes'].mean() == 223021056
     assert total_metrics['hardhat']['mem_pct'].mean().round(2) == 0.64
     assert total_metrics['hardhat']['disk_rchar'].mean().round(2) == 510253101.5
     assert total_metrics['hardhat']['disk_wchar'].mean().round(2) == 11764782.5
     assert total_metrics['hardhat']['records'].mean().round(2) == 3085.5
-    assert total_metrics['hardhat']['gas'].mean().round(2) == 1.76
+#    assert total_metrics['hardhat']['gas'].mean().round(2) == 1.76
+    assert total_metrics['hardhat']['time_by_record'].mean().round(3) == 0.008
 
 
 def test_get_concat_data_by_network_when_ganache_contains_valid_rosbag_metrics_but_not_log():
@@ -483,14 +488,15 @@ def test_get_concat_data_by_network_when_ganache_contains_valid_rosbag_metrics_b
 
     total_metrics = orchestrator._get_concat_data_by_network(folder, networks, conditional_funct)
 
-    assert total_metrics['ganache']['timestamp'].mean().round(2) == 159
+    assert total_metrics['ganache']['timestamp'].mean() == 159
     assert total_metrics['ganache']['cpu_pct'].mean().round(2) == 7.15
-    assert total_metrics['ganache']['mem_rss_bytes'].mean().round(2) == 223481856
+    assert total_metrics['ganache']['mem_rss_bytes'].mean() == 223481856
     assert total_metrics['ganache']['mem_pct'].mean().round(2) == 0.67
-    assert total_metrics['ganache']['disk_rchar'].mean().round(2) == 625822765
-    assert total_metrics['ganache']['disk_wchar'].mean().round(2) == 11762559
+    assert total_metrics['ganache']['disk_rchar'].mean() == 625822765
+    assert total_metrics['ganache']['disk_wchar'].mean() == 11762559
     assert total_metrics['ganache']['records'].mean().round(2) == 0
-    assert total_metrics['ganache']['gas'].mean().round(2) == 0
+#    assert total_metrics['ganache']['gas'].mean().round(2) == 0
+    assert total_metrics['ganache']['time_by_record'].mean().round(3) == 0
 
 
 def test_get_concat_data_by_network_when_non_existent_network_does_not_contain_valid_rosbag_metrics():
@@ -529,14 +535,15 @@ def test_get_concat_data_by_network_when_fake2_network_does_not_contain_valid_ro
 
     total_metrics = orchestrator._get_concat_data_by_network(folder, networks, conditional_funct)
 
-    assert total_metrics['fake2']['timestamp'].mean().round(2) == 0
-    assert total_metrics['fake2']['cpu_pct'].mean().round(2) == 0
-    assert total_metrics['fake2']['mem_rss_bytes'].mean().round(2) == 0
-    assert total_metrics['fake2']['mem_pct'].mean().round(2) == 0
-    assert total_metrics['fake2']['disk_rchar'].mean().round(2) == 0
-    assert total_metrics['fake2']['disk_wchar'].mean().round(2) == 0
-    assert total_metrics['fake2']['records'].mean().round(2) == 0
-    assert total_metrics['fake2']['gas'].mean().round(2) == 0
+    assert total_metrics['fake2']['timestamp'].mean() == 0
+    assert total_metrics['fake2']['cpu_pct'].mean() == 0
+    assert total_metrics['fake2']['mem_rss_bytes'].mean() == 0
+    assert total_metrics['fake2']['mem_pct'].mean() == 0
+    assert total_metrics['fake2']['disk_rchar'].mean() == 0
+    assert total_metrics['fake2']['disk_wchar'].mean() == 0
+    assert total_metrics['fake2']['records'].mean() == 0
+#    assert total_metrics['fake2']['gas'].mean() == 0
+    assert total_metrics['fake2']['time_by_record'].mean() == 0
 
 
 @pytest.mark.usefixtures("cleanup_files")
@@ -582,8 +589,8 @@ def test_build_csv_when_anvil_network_contains_valid_rosbag_metrics():
     fake_csv = pandas.read_csv(FAKE_CSV_FILE)
 
     assert fake_csv['network'][0] == 'anvil'
-    assert fake_csv['time'][0] == 26.0
-    assert fake_csv['cpu_pct_min'][0] == 0.0
+    assert fake_csv['time'][0] == 26
+    assert fake_csv['cpu_pct_min'][0] == 0
     assert fake_csv['cpu_pct_max'][0] == 192.08
     assert fake_csv['cpu_pct_mean'][0] == 35.338
     assert fake_csv['mem_rss_bytes_mean'][0] == 220422144
@@ -593,7 +600,8 @@ def test_build_csv_when_anvil_network_contains_valid_rosbag_metrics():
     assert fake_csv['disk_rchar_mean'][0] == 625822877
     assert fake_csv['disk_wchar_mean'][0] == 11762558
     assert fake_csv['records'][0] == 2087
-    assert fake_csv['gas'][0] == 2.886
+#    assert fake_csv['gas'][0] == 2.886
+    assert fake_csv['time_by_record'][0] == 0.012
 
 
 @pytest.mark.usefixtures("cleanup_files")
@@ -651,7 +659,8 @@ def test_build_csv_when_geth_network_contains_valid_rosbag_metrics():
     assert fake_csv['disk_rchar_mean'][0] == 625822814
     assert fake_csv['disk_wchar_mean'][0] == 11763074
     assert fake_csv['records'][0] == 2087
-    assert fake_csv['gas'][0] == 0.163
+#    assert fake_csv['gas'][0] == 0.163
+    assert fake_csv['time_by_record'][0] == 0.012
 
 
 @pytest.mark.usefixtures("cleanup_files")
@@ -741,7 +750,8 @@ def test_build_csv_when_anvil_and_geth_networks_contains_valid_rosbag_metrics():
     assert fake_csv['disk_rchar_mean'][0] == 625822814
     assert fake_csv['disk_wchar_mean'][0] == 11763074
     assert fake_csv['records'][0] == 2087
-    assert fake_csv['gas'][0] == 0.163
+#    assert fake_csv['gas'][0] == 0.163
+    assert fake_csv['time_by_record'][0] == 0.012
 
     assert fake_csv['network'][1] == 'anvil'
     assert fake_csv['time'][1] == 26.0
@@ -755,7 +765,8 @@ def test_build_csv_when_anvil_and_geth_networks_contains_valid_rosbag_metrics():
     assert fake_csv['disk_rchar_mean'][1] == 625822877
     assert fake_csv['disk_wchar_mean'][1] == 11762558
     assert fake_csv['records'][1] == 2087
-    assert fake_csv['gas'][1] == 2.886
+#    assert fake_csv['gas'][1] == 2.886
+    assert fake_csv['time_by_record'][1] == 0.012
 
 
 @pytest.mark.usefixtures("cleanup_files")
@@ -836,4 +847,5 @@ def test_build_csv_when_hardhat_network_contains_valid_rosbags_metrics():
     assert fake_csv['disk_rchar_mean'][0] == 510253101.5
     assert fake_csv['disk_wchar_mean'][0] == 11764782.5
     assert fake_csv['records'][0] == 3085.5
-    assert fake_csv['gas'][0] == 1.765
+#    assert fake_csv['gas'][0] == 1.765
+    assert fake_csv['time_by_record'][0] == 0.008

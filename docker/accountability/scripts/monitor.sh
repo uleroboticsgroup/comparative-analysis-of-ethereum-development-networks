@@ -103,7 +103,7 @@ trap cleanup EXIT INT TERM
 # Initial baseline
 PREV_CPU_TOTAL=$(read_cpu_total)
 PREV_CPU_PROC=$(read_cpu_proc "$APP_PID")
-PREV_MEM_TOTAL=$(read_mem_total)
+MEM_TOTAL=$(read_mem_total)
 
 # |---------------------------------- monitoring loop ----------------------------------|
 
@@ -131,7 +131,7 @@ while kill -0 "$APP_PID" 2>/dev/null; do
     # Memory
     MEM_RSS_BYTES=$(get_rss_bytes "$APP_PID")
 
-    MEM_PCT=$(awk -v r="$MEM_RSS_BYTES" -v t="$PREV_MEM_TOTAL" \
+    MEM_PCT=$(awk -v r="$MEM_RSS_BYTES" -v t="$MEM_TOTAL" \
         'BEGIN { printf "%.2f", (r/t)*100 }')
 
     # Disk
