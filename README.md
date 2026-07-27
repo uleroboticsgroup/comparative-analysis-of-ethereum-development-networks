@@ -1,12 +1,14 @@
-# Comparative analysis of Ethereum development networks for accountability in autonomous systems purposes
-The goal of this repository is to automate a comparative analysis of different Ethereum development networks for accountability in autonomous systems purposes. The accountability solution is ACOLYTE, which is available at GitHub [https://github.com/uleroboticsgroup/ACOLYTE](https://github.com/uleroboticsgroup/ACOLYTE). The proposed Ethereum development networks are the following ones:
+# Comparative analysis of Ethereum development networks for the purpose of accountability in autonomous systems
+The objective of this repository is to automate a comparative analysis of different Ethereum development networks for the purpose of accountability in autonomous systems. The accountability solution, which is employed, is designated ACOLYTE and is available on GitHub [https://github.com/uleroboticsgroup/ACOLYTE](https://github.com/uleroboticsgroup/ACOLYTE). ACOLYTE facilitates the automated extraction of data from autonomous systems through a variety of modules. The selected modules for this comparative are two. The first one reads information through a rosbag file for ROS 2-based robots. A rosbag is defined as a file containing timestamped messages. ROS 2 is the evolution of ROS (Robot Operating System), the de facto standard in robotics. The second module reads information from a CSV file, which contains information extracted from the OBD-II port for vehicles. The term OBD refers to the self-diagnostic and reporting capability of a vehicle. The functionality of an OBD system is to enable the acquisition of data regarding the various sub-systems of a vehicle. It is important to note that, by default, the ROS 2-based dataset utilized in this analysis is [https://zenodo.org/records/19469198](https://zenodo.org/records/19469198), whereas the OBD-II-based dataset is [https://www.kaggle.com/datasets/cephasax/obdii-ds3?select=exp1_14drivers_14cars_dailyRoutes.csv](https://www.kaggle.com/datasets/cephasax/obdii-ds3?select=exp1_14drivers_14cars_dailyRoutes.csv).
+
+The proposed Ethereum development networks are the following ones:
 
 - Ganache
 - Hardhat node
 - Anvil
 - Geth --dev
 
-The orchestratory.py script reads the `network.yaml` configuration file and for each Ethereum development network read, all the rosbag files located in `docker/accountability/files/rosbags` directory are traversed. The script executes a Docker Compose command to build and run two containers for each pair of network and rosbag file. One container is responsible for managing the Ethereum development network and another one is responsible for the accountability solution execution. The second container awaits until the network container is ready and executes the `monitor.sh` script with a particular ACOLYTE command for the specified development network and rosbag file. Once the `monitor.sh` execution is complete, the ACOLYTE logs and the script output folders are copied to a host folder. The script waits for the accountability container to end, and then it stops all the containers and continues with the next pair of network and rosbag file.
+The orchestratory.py script reads the `network.yaml` configuration file and for each Ethereum development network read, all the rosbag files located in `docker/accountability/files/rosbags` and all the CSV files located in `docker/accountability/files/csv` are traversed. The script executes a Docker Compose command to build and run two containers for each pair of network and file (rosbag or CSV file). One container is responsible for managing the Ethereum development network and another one is responsible for the accountability solution execution. The second container awaits until the network container is ready and executes the `monitor.sh` script with a particular ACOLYTE command for the specified development network and file (rosbag or CSV file). Once the execution of the `monitor.sh` script is complete, the ACOLYTE logs and the script output metric folders are copied to a host folder. The script waits for the accountability container to end, and then it stops all the containers and continues with the next pair of network and file (rosbag or CSV file).
 
 ## Getting Started
 
@@ -23,7 +25,25 @@ $ source .venv/bin/activate
 ```
 
 ### Configure the networks
-Configure the networks to be executed in the `networks.yaml` file.
+Configure the networks to be executed in the `networks.yaml` file. The default configuration is the complete one, which is the following:
+
+```
+ganache:
+  container: ganache
+  configuration: config_ganache.yaml
+
+hardhat:
+  container: hardhat
+  configuration: config_hardhat.yaml
+
+anvil:
+  container: anvil
+  configuration: config_anvil.yaml
+
+geth:
+  container: geth
+  configuration: config_geth.yaml
+```
 
 ## Execute `orchestrator.py`
 
@@ -84,30 +104,30 @@ The metrics stored in the `docker/compose/data/metrics/` directory, as well as s
 
 ```
 INFO:root:Starting orchestrator...
-INFO:root:+------------------------------------------------------------------------------------------------------+
-|                                               ROSBAGs                                                |
-+---------+-----------+---------+---------------+---------+-------------+------------+---------+-------+
-| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct |  disk_rchar | disk_wchar | records |  gas  |
-+---------+-----------+---------+---------------+---------+-------------+------------+---------+-------+
-| hardhat |    21.0   |  55.249 |  223021056.0  |  0.643  | 510253101.5 | 11764782.5 |  3085.5 | 1.765 |
-|   geth  |    30.5   |  38.371 |  219889664.0  |  0.644  | 511200778.0 | 11765388.0 |  3085.5 | 0.158 |
-| ganache |   203.5   |  7.239  |  221460480.0  |   0.67  | 510253066.0 | 11764781.5 |  3085.5 | 2.672 |
-|  anvil  |    29.5   |  38.837 |  220104704.0  |  0.645  | 511200847.0 | 11765070.0 |  3085.5 | 2.825 |
-+---------+-----------+---------+---------------+---------+-------------+------------+---------+-------+
-INFO:root:+-----------------------------------------------------------------------------------------------------+
-|                                               OBD CSVs                                              |
-+---------+-----------+---------+---------------+---------+------------+------------+---------+-------+
-| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct | disk_rchar | disk_wchar | records |  gas  |
-+---------+-----------+---------+---------------+---------+------------+------------+---------+-------+
-| hardhat |    17.5   |  73.083 |  194717696.0  |  0.563  | 30885966.0 | 11749370.0 |  4360.5 | 0.633 |
-|   geth  |    21.0   |  62.077 |  194172928.0  |  0.564  | 30886030.5 | 11749321.0 |  4360.5 | 0.093 |
-| ganache |   175.5   |   9.6   |  194224128.0  |  0.587  | 30886048.5 | 11749102.5 |  4360.5 | 0.731 |
-|  anvil  |    20.0   |  63.814 |  199383040.0  |  0.577  | 30886118.5 | 11748545.5 |  4360.5 | 0.759 |
-+---------+-----------+---------+---------------+---------+------------+------------+---------+-------+
+INFO:root:+--------------------------------------------------------------------------------------------------------------------+
+|                                                      ROSBAGs                                                       |
++---------+-----------+---------+---------------+---------+---------------+--------------+----------+----------------+
+| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct |   disk_rchar  |  disk_wchar  | records  | time_by_record |
++---------+-----------+---------+---------------+---------+---------------+--------------+----------+----------------+
+| hardhat |   18.556  |  52.589 | 218866574.222 |   0.63  | 523962740.111 | 11762540.667 | 2528.444 |     0.008      |
+|   geth  |   27.222  |  36.687 | 219300750.222 |  0.643  | 524616980.778 | 11763239.556 | 2528.444 |     0.011      |
+| ganache |  175.111  |  7.201  |  219844608.0  |  0.666  | 525045918.778 | 11762793.444 | 2528.444 |     0.071      |
+|  anvil  |   26.556  |  37.329 | 219895580.444 |  0.645  | 524610850.556 | 11762813.222 | 2528.444 |     0.011      |
++---------+-----------+---------+---------------+---------+---------------+--------------+----------+----------------+
+INFO:root:+-------------------------------------------------------------------------------------------------------------------+
+|                                                      OBD CSVs                                                     |
++---------+-----------+---------+---------------+---------+--------------+--------------+----------+----------------+
+| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct |  disk_rchar  |  disk_wchar  | records  | time_by_record |
++---------+-----------+---------+---------------+---------+--------------+--------------+----------+----------------+
+| hardhat |   17.379  |  73.065 | 195561683.862 |  0.568  | 30590592.759 | 11748501.552 | 4251.172 |     0.005      |
+|   geth  |   20.379  |  62.235 | 197852901.517 |   0.58  | 30590734.966 | 11748915.241 | 4251.172 |     0.006      |
+| ganache |  172.862  |  9.493  | 196507153.655 |  0.599  | 30590507.207 | 11748878.69  | 4251.172 |     0.043      |
+|  anvil  |   20.034  |  63.415 |  195907584.0  |  0.574  | 30590644.552 | 11748705.103 | 4251.172 |     0.005      |
++---------+-----------+---------+---------------+---------+--------------+--------------+----------+----------------+
 INFO:root:Stopping orchestrator
 ```
 
-Furthermore, two CSV files are stored: one relating to rosbags (`rosbag_data.csv`) and one relating to CSV files (`obd_csv_data.csv`). These include the minimum, maximum and mean values of each percentage metric, as well as the mean of the metrics and the execution time for each network.
+Furthermore, two CSV files are stored: one relating to rosbags (`rosbag_data.csv`) and one relating to CSV files (`obd_csv_data.csv`). These include the minimum, maximum and mean values of each percentage metric the mean of the metrics, the execution time for each network and the time per record.
 
 ## Logging
 
