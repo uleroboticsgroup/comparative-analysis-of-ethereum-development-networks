@@ -602,7 +602,7 @@ def _parse_arguments():
         "-c",
         "--clean_data",
         action="store_true",
-        help="clean data"
+        help="clean output data"
     )
 
     main_argument_group.add_argument(
