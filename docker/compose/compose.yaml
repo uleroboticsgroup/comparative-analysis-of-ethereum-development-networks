@@ -16,7 +16,7 @@ services:
       - hardhat
 
   anvil:
-    image: ghcr.io/foundry-rs/foundry:stable
+    image: ghcr.io/foundry-rs/foundry:v1.5.1
     container_name: anvil
     environment:
       ANVIL_IP_ADDR: "0.0.0.0"
@@ -26,7 +26,7 @@ services:
       - anvil
 
   geth:
-    image: ethereum/client-go:stable
+    image: ethereum/client-go:v1.17.4
     container_name: geth
     command:
       - --dev
