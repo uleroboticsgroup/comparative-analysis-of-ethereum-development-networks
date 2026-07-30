@@ -8,7 +8,7 @@ The proposed Ethereum development networks are the following ones:
 - Anvil
 - Geth --dev
 
-The orchestratory.py script reads the `network.yaml` configuration file and for each Ethereum development network read, all the rosbag files located in `docker/accountability/files/rosbags` and all the CSV files located in `docker/accountability/files/csv` are traversed. The script executes a Docker Compose command to build and run two containers for each pair of network and file (rosbag or CSV file). One container is responsible for managing the Ethereum development network and another one is responsible for the accountability solution execution. The second container awaits until the network container is ready and executes the `monitor.sh` script with a particular ACOLYTE command for the specified development network and file (rosbag or CSV file). Once the execution of the `monitor.sh` script is complete, the ACOLYTE logs and the script output metric folders are copied to a host folder. The script waits for the accountability container to end, and then it stops all the containers and continues with the next pair of network and file (rosbag or CSV file).
+The `orchestratory.py` script reads the `network.yaml` configuration file and for each Ethereum development network read, all the rosbag files located in `docker/accountability/files/rosbags` and all the CSV files located in `docker/accountability/files/csv` are traversed. The script executes a Docker Compose command to build and run two containers for each pair of network and file (rosbag or CSV file). One container is responsible for managing the Ethereum development network and another one is responsible for the accountability solution execution. The second container awaits until the network container is ready and executes the `monitor.sh` script with a particular ACOLYTE command for the specified development network and file (rosbag or CSV file). The `monitor.sh` script is responsible for monitoring the performance and timing metrics of the ACOLYTE process. Once the execution of the `monitor.sh` script is complete, the ACOLYTE logs and the script output metric folders are copied to a host folder. The `orchestrator.py` script waits for the accountability container to end, and then it stops all the containers and continues with the next pair of network and file (rosbag or CSV file).
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ $ source .venv/bin/activate
 ```
 
 ### Configure the networks
-Configure the networks to be executed in the `networks.yaml` file. The default configuration is the complete one, which is the following:
+Configure the networks to be executed in the `networks.yaml` file. The default configuration is as follows:
 
 ```
 ganache:
@@ -94,7 +94,7 @@ Execute the following command:
 ```
 
 ### Process the data metrics by network and type of file (rosbag or CSV) to obtain ACOLYTE performance and timing data
-After execute the `orchestrator.py` script, the following command can be executed:
+After execute the `orchestrator.py -e` command, the following command can be executed:
 
 ```
 (.venv) python3 orchestrator.py -d
