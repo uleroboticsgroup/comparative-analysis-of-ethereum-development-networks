@@ -44,7 +44,9 @@ CONTAINER_NAMES = [
     CONTAINER_HARDHAT_NAME
 ]
 
-METRICS_FOLDER="docker/compose/data/metrics"
+DATA_FOLDER='docker/compose/data'
+
+METRICS_FOLDER=f'{DATA_FOLDER}/metrics'
 METRICS = [
     'timestamp',
     'cpu_pct', 
@@ -55,7 +57,7 @@ METRICS = [
 ]
 ROUND_DIGITS = 3
 
-LOGS_FOLDER="docker/compose/data/logs"
+LOGS_FOLDER=f'{DATA_FOLDER}/logs'
 DATA = [
     'records',
 #    'gas',
@@ -171,7 +173,7 @@ def _remove_unneeded_files():
             for file in os.scandir(folder):
                 if 'rosbag' in file.name:
                     os.rename(file.path, f"{ROSBAGS_FOLDER}/{file.name}")
-            shutil.rmtree(folder.path) 
+            shutil.rmtree(folder.path)
 
     shutil.rmtree(TMP_FOLDER)
 
@@ -185,6 +187,15 @@ def _extract_rosbags(zip_file_arg: str):
      for zip_file in os.scandir(TMP_FOLDER) if zip_file.is_file()]
 
     _remove_unneeded_files()
+
+
+def _clean_data():
+    logging.info('Cleaning data stored in %s directory', DATA_FOLDER)
+
+    [shutil.rmtree(f"{folder.path}/") for folder in os.scandir(METRICS_FOLDER) if folder.is_dir()]
+
+    [shutil.rmtree(f"{folder.path}/") for folder in os.scandir(LOGS_FOLDER) if folder.is_dir()]
+    [os.remove(f"{file.path}") for file in os.scandir(LOGS_FOLDER) if file.is_file and '.log' in file.path]
 
 
 def _read_networks_config_file():
@@ -520,6 +531,9 @@ def _execute_script(arguments):
     if arguments.split:
         _split_csv(arguments.file_to_split)
 
+    if arguments.clean_data:
+        _clean_data()
+
     if arguments.execute:
         docker_client = docker.from_env()
         _run_containers(docker_client)
@@ -582,6 +596,13 @@ def _parse_arguments():
         default='docker/accountability/files/exp1_14drivers_14cars_dailyRoutes.csv',
         required='split' in sys.argv,
         help="path file to split"
+    )
+
+    main_argument_group.add_argument(
+        "-c",
+        "--clean_data",
+        action="store_true",
+        help="clean output data"
     )
 
     main_argument_group.add_argument(
