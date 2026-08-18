@@ -1,0 +1,159 @@
+2026-08-17 07:44:26,723::bcubed.blockchain.network::INFO::Configuration
+	account_address = 0x959FD7Ef9089B7142B6B908Dc3A8af7Aa8ff0FA1
+	contract_address = None
+2026-08-17 07:44:26,723::bcubed.blockchain.network::INFO::Network is initialized
+2026-08-17 07:44:26,723::bcubed.blockchain.node::INFO::Contract is not compiled or its address is not available
+2026-08-17 07:44:26,723::bcubed.blockchain.contract::INFO::Compiling smart contract...
+2026-08-17 07:44:26,851::solcx::INFO::Downloading from https://binaries.soliditylang.org/linux-amd64/solc-linux-amd64-v0.8.0+commit.c7dfd78e
+2026-08-17 07:44:28,038::solcx::INFO::Using solc version 0.8.0
+2026-08-17 07:44:28,038::solcx::INFO::solc 0.8.0 successfully installed at: /home/admin/.solcx/solc-v0.8.0
+2026-08-17 07:44:28,056::bcubed.blockchain.contract::INFO::Contract printed on: /app/BCubed/src/bcubed/blockchain/solidity/BCubedContract.json
+2026-08-17 07:44:28,056::bcubed.blockchain.contract::INFO::Compilation is done
+2026-08-17 07:44:28,056::bcubed.blockchain.contract::INFO::Getting abi and byte code from json file.
+2026-08-17 07:44:28,107::bcubed.config.config::INFO::The value '0x668eD30aAcC7C7c206aAF1327d733226416233E2' has been stored in property 'address' and category 'contract'
+2026-08-17 07:44:28,110::bcubed.blockchain.network::INFO::Contract is deployed.
+2026-08-17 07:44:28,110::bcubed.blockchain.node::INFO::Node is initialized
+2026-08-17 07:44:28,110::bcubed.bcubed::INFO::BCubed 'test' initialized.
+2026-08-17 07:44:28,111::acolyte.acolyte::INFO::Initial account balance: 9999.995787423883
+2026-08-17 07:44:28,113::acolyte.config.acolyte_config::INFO::AcolyteConfig is initialized.
+2026-08-17 07:44:28,209::bcubed.blockchain.network::INFO::New MD record was stored
+2026-08-17 07:44:28,227::bcubed.blockchain.network::INFO::MD record was retrieved
+2026-08-17 07:44:28,227::bcubed.blockchain.network::INFO::{
+    "typR": 1,
+    "fieN": 12,
+    "recT": 1786952668115,
+    "sysN": "Linux",
+    "sysV": "6.8.0-136-generic #136~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul  3 16:29:11 UTC ",
+    "sysS": "0000000000000000",
+    "sysM": "AuthenticAMD",
+    "resP": "test",
+    "bbnV": "test",
+    "netID": "e5ff6aa234fa",
+    "osyT": "x86_64",
+    "sysP": "{'0': ' AMD Ryzen 9 7900X 12-Core Processor', '1': ' AMD Ryzen 9 7900X 12-Core Processor', '2': ' AMD Ryzen 9 7900X 12-Core Processor', '3': ' AMD Ryzen 9 7900X 12-Core Processor', '4': ' AMD Ryzen 9 7900X 12-Core Processor', '5': ' AMD Ryzen 9 7900X 12-Core Processor', '6': ' AMD Ryzen 9 7900X 12-Core Processor', '7': ' AMD Ryzen 9 7900X 12-Core Processor', '8': ' AMD Ryzen 9 7900X 12-Core Processor', '9': ' AMD Ryzen 9 7900X 12-Core Processor', '10': ' AMD Ryzen 9 7900X 12-Core Processor', '11': ' AMD Ryzen 9 7900X 12-Core Processor', '12': ' AMD Ryzen 9 7900X 12-Core Processor', '13': ' AMD Ryzen 9 7900X 12-Core Processor', '14': ' AMD Ryzen 9 7900X 12-Core Processor', '15': ' AMD Ryzen 9 7900X 12-Core Processor', '16': ' AMD Ryzen 9 7900X 12-Core Processor', '17': ' AMD Ryzen 9 7900X 12-Core Processor', '18': ' AMD Ryzen 9 7900X 12-Core Processor', '19': ' AMD Ryzen 9 7900X 12-Core Processor', '20': ' AMD Ryzen 9 7900X 12-Core Processor', '21': ' AMD Ryzen 9 7900X 12-Core Processor', '22': ' AMD Ryzen 9 7900X 12-Core Processor', '23': ' AMD Ryzen 9 7900X 12-Core Processor'}"
+}
+2026-08-17 07:44:33,561::bcubed.blockchain.network::INFO::New 15 SD records were stored Estimated gas: 16477859
+2026-08-17 07:44:35,901::bcubed.blockchain.network::INFO::New 34 SD records were stored Estimated gas: 16723305
+2026-08-17 07:44:37,349::bcubed.blockchain.network::INFO::New 28 SD records were stored Estimated gas: 16368447
+2026-08-17 07:44:38,362::bcubed.blockchain.network::INFO::New 15 SD records were stored Estimated gas: 16112990
+2026-08-17 07:44:39,591::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 15824976
+2026-08-17 07:44:40,866::bcubed.blockchain.network::INFO::New 23 SD records were stored Estimated gas: 16078273
+2026-08-17 07:44:42,104::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16720635
+2026-08-17 07:44:43,373::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 15519153
+2026-08-17 07:44:44,603::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16584465
+2026-08-17 07:44:44,863::acolyte.readers.ros_bag_reader::INFO::Processed messages: 200
+2026-08-17 07:44:45,971::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16492017
+2026-08-17 07:44:47,338::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 15720933
+2026-08-17 07:44:48,617::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16334460
+2026-08-17 07:44:50,050::bcubed.blockchain.network::INFO::New 22 SD records were stored Estimated gas: 16490706
+2026-08-17 07:44:51,545::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16626689
+2026-08-17 07:44:52,840::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 15795990
+2026-08-17 07:44:54,111::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16431222
+2026-08-17 07:44:55,530::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16168882
+2026-08-17 07:44:56,978::bcubed.blockchain.network::INFO::New 22 SD records were stored Estimated gas: 16694091
+2026-08-17 07:44:58,275::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 15177937
+2026-08-17 07:44:58,384::acolyte.readers.ros_bag_reader::INFO::Processed messages: 400
+2026-08-17 07:44:59,620::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16748523
+2026-08-17 07:45:01,014::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16644831
+2026-08-17 07:45:02,436::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16555758
+2026-08-17 07:45:03,722::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 14440840
+2026-08-17 07:45:04,976::bcubed.blockchain.network::INFO::New 17 SD records were stored Estimated gas: 15582978
+2026-08-17 07:45:06,250::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 16693308
+2026-08-17 07:45:07,782::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 14813470
+2026-08-17 07:45:09,114::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16311878
+2026-08-17 07:45:10,353::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 16517357
+2026-08-17 07:45:11,759::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16470829
+2026-08-17 07:45:12,388::acolyte.readers.ros_bag_reader::INFO::Processed messages: 600
+2026-08-17 07:45:13,275::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 15356907
+2026-08-17 07:45:14,602::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 15676887
+2026-08-17 07:45:15,888::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16448344
+2026-08-17 07:45:17,280::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16765346
+2026-08-17 07:45:18,596::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 16738895
+2026-08-17 07:45:20,058::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 15555329
+2026-08-17 07:45:21,488::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16494097
+2026-08-17 07:45:22,782::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 16448959
+2026-08-17 07:45:24,143::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 15264423
+2026-08-17 07:45:25,523::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 16329981
+2026-08-17 07:45:26,777::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 14470936
+2026-08-17 07:45:27,045::acolyte.readers.ros_bag_reader::INFO::Processed messages: 800
+2026-08-17 07:45:28,213::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 16352713
+2026-08-17 07:45:29,553::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16747760
+2026-08-17 07:45:30,953::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16590359
+2026-08-17 07:45:32,393::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 15148231
+2026-08-17 07:45:33,781::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16674400
+2026-08-17 07:45:35,242::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16628107
+2026-08-17 07:45:36,683::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16560902
+2026-08-17 07:45:38,576::bcubed.blockchain.network::INFO::New 34 SD records were stored Estimated gas: 16542043
+2026-08-17 07:45:39,892::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 15564458
+2026-08-17 07:45:40,777::acolyte.readers.ros_bag_reader::INFO::Processed messages: 1000
+2026-08-17 07:45:41,281::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16720198
+2026-08-17 07:45:42,758::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16347110
+2026-08-17 07:45:44,356::bcubed.blockchain.network::INFO::New 22 SD records were stored Estimated gas: 16597824
+2026-08-17 07:45:45,857::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16513705
+2026-08-17 07:45:47,345::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16627834
+2026-08-17 07:45:48,846::bcubed.blockchain.network::INFO::New 22 SD records were stored Estimated gas: 14470667
+2026-08-17 07:45:50,259::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16158659
+2026-08-17 07:45:51,611::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16545177
+2026-08-17 07:45:53,125::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16124619
+2026-08-17 07:45:54,528::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16560688
+2026-08-17 07:45:55,388::acolyte.readers.ros_bag_reader::INFO::Processed messages: 1200
+2026-08-17 07:45:56,075::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 15924775
+2026-08-17 07:45:57,552::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16583115
+2026-08-17 07:45:58,959::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 15425615
+2026-08-17 07:46:00,394::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16604631
+2026-08-17 07:46:01,772::bcubed.blockchain.network::INFO::New 17 SD records were stored Estimated gas: 16315681
+2026-08-17 07:46:03,231::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16487718
+2026-08-17 07:46:04,828::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 14563853
+2026-08-17 07:46:06,296::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 15875223
+2026-08-17 07:46:07,649::bcubed.blockchain.network::INFO::New 18 SD records were stored Estimated gas: 14969902
+2026-08-17 07:46:09,087::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 15965672
+2026-08-17 07:46:10,634::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16649957
+2026-08-17 07:46:10,689::acolyte.readers.ros_bag_reader::INFO::Processed messages: 1400
+2026-08-17 07:46:12,113::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16176110
+2026-08-17 07:46:13,688::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16128850
+2026-08-17 07:46:15,219::bcubed.blockchain.network::INFO::New 22 SD records were stored Estimated gas: 16671163
+2026-08-17 07:46:16,743::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16755194
+2026-08-17 07:46:18,373::bcubed.blockchain.network::INFO::New 23 SD records were stored Estimated gas: 16710711
+2026-08-17 07:46:19,953::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 16356292
+2026-08-17 07:46:21,319::bcubed.blockchain.network::INFO::New 17 SD records were stored Estimated gas: 14976025
+2026-08-17 07:46:22,847::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16582094
+2026-08-17 07:46:24,338::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 16415412
+2026-08-17 07:46:25,290::acolyte.readers.ros_bag_reader::INFO::Processed messages: 1600
+2026-08-17 07:46:25,894::bcubed.blockchain.network::INFO::New 22 SD records were stored Estimated gas: 14352125
+2026-08-17 07:46:27,406::bcubed.blockchain.network::INFO::New 21 SD records were stored Estimated gas: 16695329
+2026-08-17 07:46:28,870::bcubed.blockchain.network::INFO::New 19 SD records were stored Estimated gas: 14339053
+2026-08-17 07:46:30,481::bcubed.blockchain.network::INFO::New 24 SD records were stored Estimated gas: 16374079
+2026-08-17 07:46:32,457::bcubed.blockchain.network::INFO::New 31 SD records were stored Estimated gas: 16752042
+2026-08-17 07:46:33,863::bcubed.blockchain.network::INFO::New 20 SD records were stored Estimated gas: 14412023
+2026-08-17 07:46:35,412::bcubed.blockchain.network::INFO::New 23 SD records were stored Estimated gas: 16700179
+2026-08-17 07:46:37,074::bcubed.blockchain.network::INFO::New 26 SD records were stored Estimated gas: 15027756
+2026-08-17 07:46:38,594::bcubed.blockchain.network::INFO::New 24 SD records were stored Estimated gas: 14491776
+2026-08-17 07:46:39,005::acolyte.readers.ros_bag_reader::INFO::Processed messages: 1800
+2026-08-17 07:46:40,189::bcubed.blockchain.network::INFO::New 24 SD records were stored Estimated gas: 16669802
+2026-08-17 07:46:41,901::bcubed.blockchain.network::INFO::New 25 SD records were stored Estimated gas: 15397991
+2026-08-17 07:46:43,528::bcubed.blockchain.network::INFO::New 23 SD records were stored Estimated gas: 16647876
+2026-08-17 07:46:45,235::bcubed.blockchain.network::INFO::New 25 SD records were stored Estimated gas: 15012247
+2026-08-17 07:46:46,771::bcubed.blockchain.network::INFO::New 23 SD records were stored Estimated gas: 16558107
+2026-08-17 07:46:48,487::bcubed.blockchain.network::INFO::New 26 SD records were stored Estimated gas: 15215983
+2026-08-17 07:46:50,073::bcubed.blockchain.network::INFO::New 24 SD records were stored Estimated gas: 16760115
+2026-08-17 07:46:51,831::bcubed.blockchain.network::INFO::New 26 SD records were stored Estimated gas: 15919161
+2026-08-17 07:46:52,477::acolyte.readers.ros_bag_reader::INFO::Processed messages: 2000
+2026-08-17 07:46:53,399::bcubed.blockchain.network::INFO::New 23 SD records were stored Estimated gas: 16693491
+2026-08-17 07:46:55,170::bcubed.blockchain.network::INFO::New 27 SD records were stored Estimated gas: 15997638
+2026-08-17 07:46:55,240::acolyte.readers.ros_bag_reader::INFO::2038 messages have been processed.
+2026-08-17 07:47:00,249::acolyte.acolyte::INFO::Storing remaining records and cleaning files...
+2026-08-17 07:47:00,249::bcubed.blockchain.node::INFO::Storing remaining SD records. Records: 3. Estimated gas: 3325487
+2026-08-17 07:47:00,356::bcubed.blockchain.network::INFO::New 3 SD records were stored Estimated gas: 3325487
+2026-08-17 07:47:00,460::bcubed.blockchain.network::INFO::New OD record was stored:
+
+2026-08-17 07:47:00,464::bcubed.blockchain.network::INFO::OD record was retrieved
+2026-08-17 07:47:00,464::bcubed.blockchain.network::INFO::{
+    "typR": 3,
+    "fieN": 6,
+    "recT": 1786952820249,
+    "bbtR": 2040,
+    "iniT": 1774343527692,
+    "finT": 1774343552165
+}
+2026-08-17 07:47:00,465::acolyte.acolyte::INFO::Final account balance: 9997.356919321881444379
+2026-08-17 07:47:00,466::acolyte.acolyte::INFO::Ether needed: 2.638868102001555621
