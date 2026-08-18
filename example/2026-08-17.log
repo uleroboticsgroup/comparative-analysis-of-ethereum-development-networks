@@ -1,0 +1,862 @@
+2026-08-17 07:38:39,347::root::INFO::Starting orchestrator...
+2026-08-17 07:39:15,500::root::INFO::Starting orchestrator...
+2026-08-17 07:39:15,500::root::INFO::Removing docker/accountability/files/rosbags folder files
+2026-08-17 07:39:15,501::root::INFO::Unzipping file: docker/accountability/files/19469198.zip
+2026-08-17 07:39:20,769::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_2-E3.zip
+2026-08-17 07:39:22,936::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_2-E2.zip
+2026-08-17 07:39:25,015::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_3-E2.zip
+2026-08-17 07:39:25,957::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_base-E1.zip
+2026-08-17 07:39:28,584::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_base-E2.zip
+2026-08-17 07:39:30,270::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_1-E1.zip
+2026-08-17 07:39:32,466::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_1-E2.zip
+2026-08-17 07:39:34,593::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_3-E3.zip
+2026-08-17 07:39:35,482::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_base-E3.zip
+2026-08-17 07:39:37,692::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_1-E3.zip
+2026-08-17 07:39:39,711::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_3-E1.zip
+2026-08-17 07:39:41,053::root::INFO::Unzipping file: docker/accountability/files/tmp/Test_2-E1.zip
+2026-08-17 07:39:43,141::root::INFO::Removing unneeded files
+2026-08-17 07:39:43,781::root::INFO::Removing docker/accountability/files/csv folder files
+2026-08-17 07:39:43,905::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_228.csv
+2026-08-17 07:39:43,908::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_232.csv
+2026-08-17 07:39:43,913::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_233.csv
+2026-08-17 07:39:43,915::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_235.csv
+2026-08-17 07:39:43,918::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_236.csv
+2026-08-17 07:39:43,946::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_237.csv
+2026-08-17 07:39:43,951::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_238.csv
+2026-08-17 07:39:43,953::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_239.csv
+2026-08-17 07:39:43,969::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_240.csv
+2026-08-17 07:39:43,970::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_241.csv
+2026-08-17 07:39:43,971::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_243.csv
+2026-08-17 07:39:43,977::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_244.csv
+2026-08-17 07:39:43,979::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_253.csv
+2026-08-17 07:39:43,980::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_254.csv
+2026-08-17 07:39:43,981::root::INFO::Creating file: docker/accountability/files/csv/data_car1_y_2017_d_255.csv
+2026-08-17 07:39:43,982::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_193.csv
+2026-08-17 07:39:43,992::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_195.csv
+2026-08-17 07:39:43,995::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_196.csv
+2026-08-17 07:39:44,002::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_198.csv
+2026-08-17 07:39:44,009::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_199.csv
+2026-08-17 07:39:44,010::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_201.csv
+2026-08-17 07:39:44,015::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_203.csv
+2026-08-17 07:39:44,020::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_204.csv
+2026-08-17 07:39:44,021::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_224.csv
+2026-08-17 07:39:44,022::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_227.csv
+2026-08-17 07:39:44,023::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_252.csv
+2026-08-17 07:39:44,028::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_253.csv
+2026-08-17 07:39:44,031::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_257.csv
+2026-08-17 07:39:44,031::root::INFO::Creating file: docker/accountability/files/csv/data_car11_y_2017_d_258.csv
+2026-08-17 07:39:44,032::root::INFO::Cleaning data stored in docker/compose/data directory
+2026-08-17 07:39:44,039::root::INFO::>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2026-08-17 07:39:44,039::root::INFO::Starting network ganache
+2026-08-17 07:39:44,040::root::INFO::=======================================================================
+2026-08-17 07:39:44,040::root::INFO::Total rosbags: 9
+2026-08-17 07:39:44,040::root::INFO::-------------------------------------------------------------------
+2026-08-17 07:39:44,040::root::INFO::Rosbag 1 / 9
+2026-08-17 07:39:44,040::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_24-Mar-10_11' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 07:47:02,179::root::INFO::Container accountability ended
+2026-08-17 07:47:02,180::root::INFO::Stopping container ganache
+2026-08-17 07:47:02,323::root::INFO::-------------------------------------------------------------------
+2026-08-17 07:47:02,323::root::INFO::Rosbag 2 / 9
+2026-08-17 07:47:02,323::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_23-Mar-13_23' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 07:49:52,717::root::INFO::Container accountability ended
+2026-08-17 07:49:52,718::root::INFO::Stopping container ganache
+2026-08-17 07:49:52,876::root::INFO::-------------------------------------------------------------------
+2026-08-17 07:49:52,876::root::INFO::Rosbag 3 / 9
+2026-08-17 07:49:52,876::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_24-Mar-10_21' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 07:53:23,316::root::INFO::Container accountability ended
+2026-08-17 07:53:23,317::root::INFO::Stopping container ganache
+2026-08-17 07:53:23,484::root::INFO::-------------------------------------------------------------------
+2026-08-17 07:53:23,484::root::INFO::Rosbag 4 / 9
+2026-08-17 07:53:23,484::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_23-Mar-12_11' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 07:57:43,962::root::INFO::Container accountability ended
+2026-08-17 07:57:43,964::root::INFO::Stopping container ganache
+2026-08-17 07:57:44,114::root::INFO::-------------------------------------------------------------------
+2026-08-17 07:57:44,114::root::INFO::Rosbag 5 / 9
+2026-08-17 07:57:44,115::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_20-Mar-13_00' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:00:34,511::root::INFO::Container accountability ended
+2026-08-17 08:00:34,513::root::INFO::Stopping container ganache
+2026-08-17 08:00:34,657::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:00:34,657::root::INFO::Rosbag 6 / 9
+2026-08-17 08:00:34,657::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_24-Mar-10_02' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:03:25,037::root::INFO::Container accountability ended
+2026-08-17 08:03:25,038::root::INFO::Stopping container ganache
+2026-08-17 08:03:25,172::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:03:25,173::root::INFO::Rosbag 7 / 9
+2026-08-17 08:03:25,173::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_23-Mar-13_33' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:06:15,564::root::INFO::Container accountability ended
+2026-08-17 08:06:15,565::root::INFO::Stopping container ganache
+2026-08-17 08:06:15,715::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:06:15,715::root::INFO::Rosbag 8 / 9
+2026-08-17 08:06:15,715::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_23-Mar-12_58' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:09:36,176::root::INFO::Container accountability ended
+2026-08-17 08:09:36,178::root::INFO::Stopping container ganache
+2026-08-17 08:09:36,320::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:09:36,320::root::INFO::Rosbag 9 / 9
+2026-08-17 08:09:36,320::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' ROSBAG='rosbag_20-Mar-09_52' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:12:26,709::root::INFO::Container accountability ended
+2026-08-17 08:12:26,710::root::INFO::Stopping container ganache
+2026-08-17 08:12:26,847::root::INFO::=======================================================================
+2026-08-17 08:12:26,847::root::INFO::Total CSVs: 29
+2026-08-17 08:12:26,847::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:12:26,847::root::INFO::CSV 1 / 29
+2026-08-17 08:12:26,847::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_201.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:13:17,113::root::INFO::Container accountability ended
+2026-08-17 08:13:17,114::root::INFO::Stopping container ganache
+2026-08-17 08:13:17,249::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:13:17,249::root::INFO::CSV 2 / 29
+2026-08-17 08:13:17,249::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_240.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:17:27,736::root::INFO::Container accountability ended
+2026-08-17 08:17:27,737::root::INFO::Stopping container ganache
+2026-08-17 08:17:27,865::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:17:27,865::root::INFO::CSV 3 / 29
+2026-08-17 08:17:27,865::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_196.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:20:38,278::root::INFO::Container accountability ended
+2026-08-17 08:20:38,280::root::INFO::Stopping container ganache
+2026-08-17 08:20:38,450::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:20:38,450::root::INFO::CSV 4 / 29
+2026-08-17 08:20:38,450::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:22:38,775::root::INFO::Container accountability ended
+2026-08-17 08:22:38,776::root::INFO::Stopping container ganache
+2026-08-17 08:22:38,912::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:22:38,912::root::INFO::CSV 5 / 29
+2026-08-17 08:22:38,912::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_233.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:25:29,290::root::INFO::Container accountability ended
+2026-08-17 08:25:29,291::root::INFO::Stopping container ganache
+2026-08-17 08:25:29,441::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:25:29,441::root::INFO::CSV 6 / 29
+2026-08-17 08:25:29,441::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_198.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:32:40,126::root::INFO::Container accountability ended
+2026-08-17 08:32:40,127::root::INFO::Stopping container ganache
+2026-08-17 08:32:40,293::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:32:40,293::root::INFO::CSV 7 / 29
+2026-08-17 08:32:40,293::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_244.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:35:20,676::root::INFO::Container accountability ended
+2026-08-17 08:35:20,677::root::INFO::Stopping container ganache
+2026-08-17 08:35:20,810::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:35:20,810::root::INFO::CSV 8 / 29
+2026-08-17 08:35:20,810::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_203.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:41:01,379::root::INFO::Container accountability ended
+2026-08-17 08:41:01,380::root::INFO::Stopping container ganache
+2026-08-17 08:41:01,525::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:41:01,525::root::INFO::CSV 9 / 29
+2026-08-17 08:41:01,525::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_237.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:48:02,161::root::INFO::Container accountability ended
+2026-08-17 08:48:02,162::root::INFO::Stopping container ganache
+2026-08-17 08:48:02,328::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:48:02,328::root::INFO::CSV 10 / 29
+2026-08-17 08:48:02,328::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:52:52,862::root::INFO::Container accountability ended
+2026-08-17 08:52:52,863::root::INFO::Stopping container ganache
+2026-08-17 08:52:53,018::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:52:53,018::root::INFO::CSV 11 / 29
+2026-08-17 08:52:53,018::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_193.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:54:03,275::root::INFO::Container accountability ended
+2026-08-17 08:54:03,276::root::INFO::Stopping container ganache
+2026-08-17 08:54:03,392::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:54:03,392::root::INFO::CSV 12 / 29
+2026-08-17 08:54:03,392::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_238.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:55:13,660::root::INFO::Container accountability ended
+2026-08-17 08:55:13,661::root::INFO::Stopping container ganache
+2026-08-17 08:55:13,797::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:55:13,797::root::INFO::CSV 13 / 29
+2026-08-17 08:55:13,798::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_227.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:55:43,997::root::INFO::Container accountability ended
+2026-08-17 08:55:43,999::root::INFO::Stopping container ganache
+2026-08-17 08:55:44,101::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:55:44,101::root::INFO::CSV 14 / 29
+2026-08-17 08:55:44,101::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_254.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:56:54,385::root::INFO::Container accountability ended
+2026-08-17 08:56:54,387::root::INFO::Stopping container ganache
+2026-08-17 08:56:54,511::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:56:54,511::root::INFO::CSV 15 / 29
+2026-08-17 08:56:54,511::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_243.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 08:57:54,766::root::INFO::Container accountability ended
+2026-08-17 08:57:54,767::root::INFO::Stopping container ganache
+2026-08-17 08:57:54,895::root::INFO::-------------------------------------------------------------------
+2026-08-17 08:57:54,895::root::INFO::CSV 16 / 29
+2026-08-17 08:57:54,895::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_257.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:01:15,306::root::INFO::Container accountability ended
+2026-08-17 09:01:15,307::root::INFO::Stopping container ganache
+2026-08-17 09:01:15,460::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:01:15,460::root::INFO::CSV 17 / 29
+2026-08-17 09:01:15,460::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_252.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:02:45,734::root::INFO::Container accountability ended
+2026-08-17 09:02:45,735::root::INFO::Stopping container ganache
+2026-08-17 09:02:45,880::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:02:45,880::root::INFO::CSV 18 / 29
+2026-08-17 09:02:45,880::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_224.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:03:56,162::root::INFO::Container accountability ended
+2026-08-17 09:03:56,163::root::INFO::Stopping container ganache
+2026-08-17 09:03:56,300::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:03:56,300::root::INFO::CSV 19 / 29
+2026-08-17 09:03:56,300::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_199.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:12:17,091::root::INFO::Container accountability ended
+2026-08-17 09:12:17,092::root::INFO::Stopping container ganache
+2026-08-17 09:12:17,233::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:12:17,233::root::INFO::CSV 20 / 29
+2026-08-17 09:12:17,233::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_236.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:14:57,614::root::INFO::Container accountability ended
+2026-08-17 09:14:57,615::root::INFO::Stopping container ganache
+2026-08-17 09:14:57,747::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:14:57,747::root::INFO::CSV 21 / 29
+2026-08-17 09:14:57,747::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_195.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:25:38,715::root::INFO::Container accountability ended
+2026-08-17 09:25:38,716::root::INFO::Stopping container ganache
+2026-08-17 09:25:38,860::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:25:38,860::root::INFO::CSV 22 / 29
+2026-08-17 09:25:38,860::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_255.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:26:19,101::root::INFO::Container accountability ended
+2026-08-17 09:26:19,102::root::INFO::Stopping container ganache
+2026-08-17 09:26:19,240::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:26:19,241::root::INFO::CSV 23 / 29
+2026-08-17 09:26:19,241::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_258.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:26:59,464::root::INFO::Container accountability ended
+2026-08-17 09:26:59,466::root::INFO::Stopping container ganache
+2026-08-17 09:26:59,598::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:26:59,598::root::INFO::CSV 24 / 29
+2026-08-17 09:26:59,598::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_232.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:29:19,971::root::INFO::Container accountability ended
+2026-08-17 09:29:19,972::root::INFO::Stopping container ganache
+2026-08-17 09:29:20,129::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:29:20,129::root::INFO::CSV 25 / 29
+2026-08-17 09:29:20,129::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_228.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:32:40,549::root::INFO::Container accountability ended
+2026-08-17 09:32:40,551::root::INFO::Stopping container ganache
+2026-08-17 09:32:40,685::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:32:40,685::root::INFO::CSV 26 / 29
+2026-08-17 09:32:40,685::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_241.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:33:00,876::root::INFO::Container accountability ended
+2026-08-17 09:33:00,878::root::INFO::Stopping container ganache
+2026-08-17 09:33:01,003::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:33:01,003::root::INFO::CSV 27 / 29
+2026-08-17 09:33:01,003::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car11_y_2017_d_204.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:37:31,523::root::INFO::Container accountability ended
+2026-08-17 09:37:31,524::root::INFO::Stopping container ganache
+2026-08-17 09:37:31,653::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:37:31,653::root::INFO::CSV 28 / 29
+2026-08-17 09:37:31,653::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_235.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:39:21,955::root::INFO::Container accountability ended
+2026-08-17 09:39:21,957::root::INFO::Stopping container ganache
+2026-08-17 09:39:22,099::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:39:22,100::root::INFO::CSV 29 / 29
+2026-08-17 09:39:22,100::root::INFO::NETWORK='ganache' CONF_FILE='config_ganache.yaml' CSV='data_car1_y_2017_d_239.csv' docker compose -f docker/compose/compose.yaml --profile ganache up -d
+2026-08-17 09:41:22,438::root::INFO::Container accountability ended
+2026-08-17 09:41:22,439::root::INFO::Stopping container ganache
+2026-08-17 09:41:22,574::root::INFO::<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2026-08-17 09:41:22,574::root::INFO::>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2026-08-17 09:41:22,574::root::INFO::Starting network hardhat
+2026-08-17 09:41:22,574::root::INFO::=======================================================================
+2026-08-17 09:41:22,574::root::INFO::Total rosbags: 9
+2026-08-17 09:41:22,574::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:41:22,574::root::INFO::Rosbag 1 / 9
+2026-08-17 09:41:22,574::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_24-Mar-10_11' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:42:27,076::root::INFO::Container accountability ended
+2026-08-17 09:42:27,077::root::INFO::Stopping container hardhat
+2026-08-17 09:42:27,720::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:42:27,720::root::INFO::Rosbag 2 / 9
+2026-08-17 09:42:27,720::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_23-Mar-13_23' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:42:57,931::root::INFO::Container accountability ended
+2026-08-17 09:42:57,932::root::INFO::Stopping container hardhat
+2026-08-17 09:42:58,575::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:42:58,575::root::INFO::Rosbag 3 / 9
+2026-08-17 09:42:58,575::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_24-Mar-10_21' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:43:28,802::root::INFO::Container accountability ended
+2026-08-17 09:43:28,803::root::INFO::Stopping container hardhat
+2026-08-17 09:43:29,439::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:43:29,439::root::INFO::Rosbag 4 / 9
+2026-08-17 09:43:29,439::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_23-Mar-12_11' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:43:59,642::root::INFO::Container accountability ended
+2026-08-17 09:43:59,643::root::INFO::Stopping container hardhat
+2026-08-17 09:44:00,302::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:44:00,302::root::INFO::Rosbag 5 / 9
+2026-08-17 09:44:00,302::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_20-Mar-13_00' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:44:30,526::root::INFO::Container accountability ended
+2026-08-17 09:44:30,527::root::INFO::Stopping container hardhat
+2026-08-17 09:44:31,177::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:44:31,177::root::INFO::Rosbag 6 / 9
+2026-08-17 09:44:31,177::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_24-Mar-10_02' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:45:01,393::root::INFO::Container accountability ended
+2026-08-17 09:45:01,395::root::INFO::Stopping container hardhat
+2026-08-17 09:45:02,016::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:45:02,017::root::INFO::Rosbag 7 / 9
+2026-08-17 09:45:02,017::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_23-Mar-13_33' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:45:32,228::root::INFO::Container accountability ended
+2026-08-17 09:45:32,229::root::INFO::Stopping container hardhat
+2026-08-17 09:45:32,870::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:45:32,870::root::INFO::Rosbag 8 / 9
+2026-08-17 09:45:32,870::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_23-Mar-12_58' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:46:03,090::root::INFO::Container accountability ended
+2026-08-17 09:46:03,091::root::INFO::Stopping container hardhat
+2026-08-17 09:46:03,706::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:46:03,706::root::INFO::Rosbag 9 / 9
+2026-08-17 09:46:03,706::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' ROSBAG='rosbag_20-Mar-09_52' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:46:33,928::root::INFO::Container accountability ended
+2026-08-17 09:46:33,929::root::INFO::Stopping container hardhat
+2026-08-17 09:46:34,562::root::INFO::=======================================================================
+2026-08-17 09:46:34,562::root::INFO::Total CSVs: 29
+2026-08-17 09:46:34,562::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:46:34,562::root::INFO::CSV 1 / 29
+2026-08-17 09:46:34,562::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_201.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:46:54,775::root::INFO::Container accountability ended
+2026-08-17 09:46:54,776::root::INFO::Stopping container hardhat
+2026-08-17 09:46:55,396::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:46:55,396::root::INFO::CSV 2 / 29
+2026-08-17 09:46:55,396::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_240.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:47:25,606::root::INFO::Container accountability ended
+2026-08-17 09:47:25,607::root::INFO::Stopping container hardhat
+2026-08-17 09:47:26,231::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:47:26,231::root::INFO::CSV 3 / 29
+2026-08-17 09:47:26,232::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_196.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:47:56,453::root::INFO::Container accountability ended
+2026-08-17 09:47:56,454::root::INFO::Stopping container hardhat
+2026-08-17 09:47:57,068::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:47:57,068::root::INFO::CSV 4 / 29
+2026-08-17 09:47:57,068::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:48:17,278::root::INFO::Container accountability ended
+2026-08-17 09:48:17,279::root::INFO::Stopping container hardhat
+2026-08-17 09:48:17,925::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:48:17,926::root::INFO::CSV 5 / 29
+2026-08-17 09:48:17,926::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_233.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:48:48,136::root::INFO::Container accountability ended
+2026-08-17 09:48:48,137::root::INFO::Stopping container hardhat
+2026-08-17 09:48:48,792::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:48:48,792::root::INFO::CSV 6 / 29
+2026-08-17 09:48:48,792::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_198.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:49:39,042::root::INFO::Container accountability ended
+2026-08-17 09:49:39,043::root::INFO::Stopping container hardhat
+2026-08-17 09:49:39,694::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:49:39,694::root::INFO::CSV 7 / 29
+2026-08-17 09:49:39,694::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_244.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:50:09,910::root::INFO::Container accountability ended
+2026-08-17 09:50:09,911::root::INFO::Stopping container hardhat
+2026-08-17 09:50:10,562::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:50:10,562::root::INFO::CSV 8 / 29
+2026-08-17 09:50:10,562::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_203.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:50:50,798::root::INFO::Container accountability ended
+2026-08-17 09:50:50,799::root::INFO::Stopping container hardhat
+2026-08-17 09:50:51,440::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:50:51,440::root::INFO::CSV 9 / 29
+2026-08-17 09:50:51,440::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_237.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:51:41,679::root::INFO::Container accountability ended
+2026-08-17 09:51:41,680::root::INFO::Stopping container hardhat
+2026-08-17 09:51:42,324::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:51:42,324::root::INFO::CSV 10 / 29
+2026-08-17 09:51:42,324::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:52:22,543::root::INFO::Container accountability ended
+2026-08-17 09:52:22,545::root::INFO::Stopping container hardhat
+2026-08-17 09:52:23,191::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:52:23,191::root::INFO::CSV 11 / 29
+2026-08-17 09:52:23,191::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_193.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:52:43,397::root::INFO::Container accountability ended
+2026-08-17 09:52:43,398::root::INFO::Stopping container hardhat
+2026-08-17 09:52:44,047::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:52:44,047::root::INFO::CSV 12 / 29
+2026-08-17 09:52:44,047::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_238.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:53:04,245::root::INFO::Container accountability ended
+2026-08-17 09:53:04,247::root::INFO::Stopping container hardhat
+2026-08-17 09:53:04,881::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:53:04,881::root::INFO::CSV 13 / 29
+2026-08-17 09:53:04,881::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_227.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:53:15,078::root::INFO::Container accountability ended
+2026-08-17 09:53:15,079::root::INFO::Stopping container hardhat
+2026-08-17 09:53:15,712::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:53:15,712::root::INFO::CSV 14 / 29
+2026-08-17 09:53:15,712::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_254.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:53:35,909::root::INFO::Container accountability ended
+2026-08-17 09:53:35,910::root::INFO::Stopping container hardhat
+2026-08-17 09:53:36,566::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:53:36,566::root::INFO::CSV 15 / 29
+2026-08-17 09:53:36,566::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_243.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:53:56,770::root::INFO::Container accountability ended
+2026-08-17 09:53:56,772::root::INFO::Stopping container hardhat
+2026-08-17 09:53:57,420::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:53:57,420::root::INFO::CSV 16 / 29
+2026-08-17 09:53:57,420::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_257.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:54:27,636::root::INFO::Container accountability ended
+2026-08-17 09:54:27,638::root::INFO::Stopping container hardhat
+2026-08-17 09:54:28,283::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:54:28,283::root::INFO::CSV 17 / 29
+2026-08-17 09:54:28,283::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_252.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:54:48,476::root::INFO::Container accountability ended
+2026-08-17 09:54:48,477::root::INFO::Stopping container hardhat
+2026-08-17 09:54:49,098::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:54:49,098::root::INFO::CSV 18 / 29
+2026-08-17 09:54:49,098::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_224.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:55:09,303::root::INFO::Container accountability ended
+2026-08-17 09:55:09,304::root::INFO::Stopping container hardhat
+2026-08-17 09:55:09,933::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:55:09,933::root::INFO::CSV 19 / 29
+2026-08-17 09:55:09,934::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_199.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:56:00,169::root::INFO::Container accountability ended
+2026-08-17 09:56:00,170::root::INFO::Stopping container hardhat
+2026-08-17 09:56:00,830::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:56:00,830::root::INFO::CSV 20 / 29
+2026-08-17 09:56:00,830::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_236.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:56:31,047::root::INFO::Container accountability ended
+2026-08-17 09:56:31,048::root::INFO::Stopping container hardhat
+2026-08-17 09:56:31,687::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:56:31,688::root::INFO::CSV 21 / 29
+2026-08-17 09:56:31,688::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_195.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:57:41,951::root::INFO::Container accountability ended
+2026-08-17 09:57:41,953::root::INFO::Stopping container hardhat
+2026-08-17 09:57:42,573::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:57:42,573::root::INFO::CSV 22 / 29
+2026-08-17 09:57:42,573::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_255.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:57:52,768::root::INFO::Container accountability ended
+2026-08-17 09:57:52,769::root::INFO::Stopping container hardhat
+2026-08-17 09:57:53,403::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:57:53,403::root::INFO::CSV 23 / 29
+2026-08-17 09:57:53,403::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_258.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:58:03,592::root::INFO::Container accountability ended
+2026-08-17 09:58:03,593::root::INFO::Stopping container hardhat
+2026-08-17 09:58:04,231::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:58:04,231::root::INFO::CSV 24 / 29
+2026-08-17 09:58:04,231::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_232.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:58:24,453::root::INFO::Container accountability ended
+2026-08-17 09:58:24,454::root::INFO::Stopping container hardhat
+2026-08-17 09:58:25,074::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:58:25,074::root::INFO::CSV 25 / 29
+2026-08-17 09:58:25,074::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_228.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:58:55,274::root::INFO::Container accountability ended
+2026-08-17 09:58:55,275::root::INFO::Stopping container hardhat
+2026-08-17 09:58:55,910::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:58:55,910::root::INFO::CSV 26 / 29
+2026-08-17 09:58:55,910::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_241.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:59:06,115::root::INFO::Container accountability ended
+2026-08-17 09:59:06,116::root::INFO::Stopping container hardhat
+2026-08-17 09:59:06,746::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:59:06,746::root::INFO::CSV 27 / 29
+2026-08-17 09:59:06,746::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car11_y_2017_d_204.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 09:59:46,974::root::INFO::Container accountability ended
+2026-08-17 09:59:46,975::root::INFO::Stopping container hardhat
+2026-08-17 09:59:47,614::root::INFO::-------------------------------------------------------------------
+2026-08-17 09:59:47,614::root::INFO::CSV 28 / 29
+2026-08-17 09:59:47,614::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_235.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 10:00:07,822::root::INFO::Container accountability ended
+2026-08-17 10:00:07,823::root::INFO::Stopping container hardhat
+2026-08-17 10:00:08,457::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:00:08,457::root::INFO::CSV 29 / 29
+2026-08-17 10:00:08,457::root::INFO::NETWORK='hardhat' CONF_FILE='config_hardhat.yaml' CSV='data_car1_y_2017_d_239.csv' docker compose -f docker/compose/compose.yaml --profile hardhat up -d
+2026-08-17 10:00:28,653::root::INFO::Container accountability ended
+2026-08-17 10:00:28,654::root::INFO::Stopping container hardhat
+2026-08-17 10:00:29,291::root::INFO::<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2026-08-17 10:00:29,291::root::INFO::>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2026-08-17 10:00:29,291::root::INFO::Starting network anvil
+2026-08-17 10:00:29,291::root::INFO::=======================================================================
+2026-08-17 10:00:29,291::root::INFO::Total rosbags: 9
+2026-08-17 10:00:29,292::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:00:29,292::root::INFO::Rosbag 1 / 9
+2026-08-17 10:00:29,292::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_24-Mar-10_11' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:01:27,605::root::INFO::Container accountability ended
+2026-08-17 10:01:27,606::root::INFO::Stopping container anvil
+2026-08-17 10:01:37,743::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:01:37,743::root::INFO::Rosbag 2 / 9
+2026-08-17 10:01:37,743::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_23-Mar-13_23' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:02:17,958::root::INFO::Container accountability ended
+2026-08-17 10:02:17,959::root::INFO::Stopping container anvil
+2026-08-17 10:02:28,100::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:02:28,100::root::INFO::Rosbag 3 / 9
+2026-08-17 10:02:28,100::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_24-Mar-10_21' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:03:08,316::root::INFO::Container accountability ended
+2026-08-17 10:03:08,317::root::INFO::Stopping container anvil
+2026-08-17 10:03:18,457::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:03:18,457::root::INFO::Rosbag 4 / 9
+2026-08-17 10:03:18,457::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_23-Mar-12_11' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:03:58,695::root::INFO::Container accountability ended
+2026-08-17 10:03:58,696::root::INFO::Stopping container anvil
+2026-08-17 10:04:08,851::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:04:08,851::root::INFO::Rosbag 5 / 9
+2026-08-17 10:04:08,851::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_20-Mar-13_00' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:04:49,084::root::INFO::Container accountability ended
+2026-08-17 10:04:49,085::root::INFO::Stopping container anvil
+2026-08-17 10:04:59,236::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:04:59,236::root::INFO::Rosbag 6 / 9
+2026-08-17 10:04:59,236::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_24-Mar-10_02' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:05:39,463::root::INFO::Container accountability ended
+2026-08-17 10:05:39,464::root::INFO::Stopping container anvil
+2026-08-17 10:05:49,592::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:05:49,592::root::INFO::Rosbag 7 / 9
+2026-08-17 10:05:49,592::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_23-Mar-13_33' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:06:29,814::root::INFO::Container accountability ended
+2026-08-17 10:06:29,815::root::INFO::Stopping container anvil
+2026-08-17 10:06:39,964::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:06:39,964::root::INFO::Rosbag 8 / 9
+2026-08-17 10:06:39,964::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_23-Mar-12_58' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:07:20,189::root::INFO::Container accountability ended
+2026-08-17 10:07:20,190::root::INFO::Stopping container anvil
+2026-08-17 10:07:30,347::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:07:30,348::root::INFO::Rosbag 9 / 9
+2026-08-17 10:07:30,348::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' ROSBAG='rosbag_20-Mar-09_52' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:08:10,579::root::INFO::Container accountability ended
+2026-08-17 10:08:10,580::root::INFO::Stopping container anvil
+2026-08-17 10:08:20,709::root::INFO::=======================================================================
+2026-08-17 10:08:20,709::root::INFO::Total CSVs: 29
+2026-08-17 10:08:20,709::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:08:20,709::root::INFO::CSV 1 / 29
+2026-08-17 10:08:20,710::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_201.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:08:40,911::root::INFO::Container accountability ended
+2026-08-17 10:08:40,913::root::INFO::Stopping container anvil
+2026-08-17 10:08:51,046::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:08:51,046::root::INFO::CSV 2 / 29
+2026-08-17 10:08:51,046::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_240.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:09:31,269::root::INFO::Container accountability ended
+2026-08-17 10:09:31,270::root::INFO::Stopping container anvil
+2026-08-17 10:09:41,413::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:09:41,413::root::INFO::CSV 3 / 29
+2026-08-17 10:09:41,413::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_196.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:10:11,630::root::INFO::Container accountability ended
+2026-08-17 10:10:11,631::root::INFO::Stopping container anvil
+2026-08-17 10:10:21,745::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:10:21,746::root::INFO::CSV 4 / 29
+2026-08-17 10:10:21,746::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:10:41,957::root::INFO::Container accountability ended
+2026-08-17 10:10:41,958::root::INFO::Stopping container anvil
+2026-08-17 10:10:52,080::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:10:52,080::root::INFO::CSV 5 / 29
+2026-08-17 10:10:52,080::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_233.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:11:22,297::root::INFO::Container accountability ended
+2026-08-17 10:11:22,298::root::INFO::Stopping container anvil
+2026-08-17 10:11:32,423::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:11:32,423::root::INFO::CSV 6 / 29
+2026-08-17 10:11:32,423::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_198.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:12:22,665::root::INFO::Container accountability ended
+2026-08-17 10:12:22,666::root::INFO::Stopping container anvil
+2026-08-17 10:12:32,822::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:12:32,822::root::INFO::CSV 7 / 29
+2026-08-17 10:12:32,822::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_244.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:13:03,035::root::INFO::Container accountability ended
+2026-08-17 10:13:03,036::root::INFO::Stopping container anvil
+2026-08-17 10:13:13,155::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:13:13,155::root::INFO::CSV 8 / 29
+2026-08-17 10:13:13,155::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_203.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:14:03,404::root::INFO::Container accountability ended
+2026-08-17 10:14:03,405::root::INFO::Stopping container anvil
+2026-08-17 10:14:13,540::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:14:13,540::root::INFO::CSV 9 / 29
+2026-08-17 10:14:13,541::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_237.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:15:13,801::root::INFO::Container accountability ended
+2026-08-17 10:15:13,802::root::INFO::Stopping container anvil
+2026-08-17 10:15:23,931::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:15:23,931::root::INFO::CSV 10 / 29
+2026-08-17 10:15:23,931::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:16:04,160::root::INFO::Container accountability ended
+2026-08-17 10:16:04,161::root::INFO::Stopping container anvil
+2026-08-17 10:16:14,292::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:16:14,292::root::INFO::CSV 11 / 29
+2026-08-17 10:16:14,292::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_193.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:16:34,503::root::INFO::Container accountability ended
+2026-08-17 10:16:34,505::root::INFO::Stopping container anvil
+2026-08-17 10:16:44,614::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:16:44,615::root::INFO::CSV 12 / 29
+2026-08-17 10:16:44,615::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_238.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:17:04,824::root::INFO::Container accountability ended
+2026-08-17 10:17:04,826::root::INFO::Stopping container anvil
+2026-08-17 10:17:14,934::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:17:14,934::root::INFO::CSV 13 / 29
+2026-08-17 10:17:14,934::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_227.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:17:25,122::root::INFO::Container accountability ended
+2026-08-17 10:17:25,123::root::INFO::Stopping container anvil
+2026-08-17 10:17:35,228::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:17:35,228::root::INFO::CSV 14 / 29
+2026-08-17 10:17:35,228::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_254.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:17:55,434::root::INFO::Container accountability ended
+2026-08-17 10:17:55,435::root::INFO::Stopping container anvil
+2026-08-17 10:18:05,546::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:18:05,546::root::INFO::CSV 15 / 29
+2026-08-17 10:18:05,546::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_243.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:18:25,748::root::INFO::Container accountability ended
+2026-08-17 10:18:25,750::root::INFO::Stopping container anvil
+2026-08-17 10:18:35,883::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:18:35,883::root::INFO::CSV 16 / 29
+2026-08-17 10:18:35,883::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_257.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:19:06,098::root::INFO::Container accountability ended
+2026-08-17 10:19:06,100::root::INFO::Stopping container anvil
+2026-08-17 10:19:16,230::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:19:16,230::root::INFO::CSV 17 / 29
+2026-08-17 10:19:16,230::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_252.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:19:36,465::root::INFO::Container accountability ended
+2026-08-17 10:19:36,467::root::INFO::Stopping container anvil
+2026-08-17 10:19:46,576::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:19:46,576::root::INFO::CSV 18 / 29
+2026-08-17 10:19:46,576::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_224.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:20:06,779::root::INFO::Container accountability ended
+2026-08-17 10:20:06,781::root::INFO::Stopping container anvil
+2026-08-17 10:20:16,909::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:20:16,909::root::INFO::CSV 19 / 29
+2026-08-17 10:20:16,910::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_199.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:21:17,166::root::INFO::Container accountability ended
+2026-08-17 10:21:17,168::root::INFO::Stopping container anvil
+2026-08-17 10:21:27,320::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:21:27,320::root::INFO::CSV 20 / 29
+2026-08-17 10:21:27,320::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_236.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:21:57,532::root::INFO::Container accountability ended
+2026-08-17 10:21:57,533::root::INFO::Stopping container anvil
+2026-08-17 10:22:07,661::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:22:07,661::root::INFO::CSV 21 / 29
+2026-08-17 10:22:07,661::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_195.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:23:27,926::root::INFO::Container accountability ended
+2026-08-17 10:23:27,927::root::INFO::Stopping container anvil
+2026-08-17 10:23:38,104::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:23:38,104::root::INFO::CSV 22 / 29
+2026-08-17 10:23:38,104::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_255.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:23:58,302::root::INFO::Container accountability ended
+2026-08-17 10:23:58,303::root::INFO::Stopping container anvil
+2026-08-17 10:24:08,400::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:24:08,400::root::INFO::CSV 23 / 29
+2026-08-17 10:24:08,400::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_258.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:24:18,582::root::INFO::Container accountability ended
+2026-08-17 10:24:18,583::root::INFO::Stopping container anvil
+2026-08-17 10:24:28,685::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:24:28,685::root::INFO::CSV 24 / 29
+2026-08-17 10:24:28,685::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_232.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:24:58,902::root::INFO::Container accountability ended
+2026-08-17 10:24:58,903::root::INFO::Stopping container anvil
+2026-08-17 10:25:09,028::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:25:09,028::root::INFO::CSV 25 / 29
+2026-08-17 10:25:09,028::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_228.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:25:39,258::root::INFO::Container accountability ended
+2026-08-17 10:25:39,259::root::INFO::Stopping container anvil
+2026-08-17 10:25:49,423::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:25:49,423::root::INFO::CSV 26 / 29
+2026-08-17 10:25:49,423::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_241.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:25:59,616::root::INFO::Container accountability ended
+2026-08-17 10:25:59,617::root::INFO::Stopping container anvil
+2026-08-17 10:26:09,747::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:26:09,747::root::INFO::CSV 27 / 29
+2026-08-17 10:26:09,747::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car11_y_2017_d_204.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:26:49,979::root::INFO::Container accountability ended
+2026-08-17 10:26:49,981::root::INFO::Stopping container anvil
+2026-08-17 10:27:00,117::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:27:00,117::root::INFO::CSV 28 / 29
+2026-08-17 10:27:00,117::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_235.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:27:20,316::root::INFO::Container accountability ended
+2026-08-17 10:27:20,317::root::INFO::Stopping container anvil
+2026-08-17 10:27:30,459::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:27:30,459::root::INFO::CSV 29 / 29
+2026-08-17 10:27:30,459::root::INFO::NETWORK='anvil' CONF_FILE='config_anvil.yaml' CSV='data_car1_y_2017_d_239.csv' docker compose -f docker/compose/compose.yaml --profile anvil up -d
+2026-08-17 10:27:50,646::root::INFO::Container accountability ended
+2026-08-17 10:27:50,647::root::INFO::Stopping container anvil
+2026-08-17 10:28:00,756::root::INFO::<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2026-08-17 10:28:00,757::root::INFO::>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2026-08-17 10:28:00,757::root::INFO::Starting network geth
+2026-08-17 10:28:00,757::root::INFO::=======================================================================
+2026-08-17 10:28:00,757::root::INFO::Total rosbags: 9
+2026-08-17 10:28:00,757::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:28:00,757::root::INFO::Rosbag 1 / 9
+2026-08-17 10:28:00,757::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_24-Mar-10_11' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:28:45,056::root::INFO::Container accountability ended
+2026-08-17 10:28:45,057::root::INFO::Stopping container geth
+2026-08-17 10:28:45,315::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:28:45,316::root::INFO::Rosbag 2 / 9
+2026-08-17 10:28:45,316::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_23-Mar-13_23' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:29:25,526::root::INFO::Container accountability ended
+2026-08-17 10:29:25,527::root::INFO::Stopping container geth
+2026-08-17 10:29:25,776::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:29:25,776::root::INFO::Rosbag 3 / 9
+2026-08-17 10:29:25,776::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_24-Mar-10_21' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:30:05,999::root::INFO::Container accountability ended
+2026-08-17 10:30:06,000::root::INFO::Stopping container geth
+2026-08-17 10:30:06,194::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:30:06,194::root::INFO::Rosbag 4 / 9
+2026-08-17 10:30:06,194::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_23-Mar-12_11' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:30:46,424::root::INFO::Container accountability ended
+2026-08-17 10:30:46,425::root::INFO::Stopping container geth
+2026-08-17 10:30:46,689::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:30:46,689::root::INFO::Rosbag 5 / 9
+2026-08-17 10:30:46,689::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_20-Mar-13_00' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:31:26,878::root::INFO::Container accountability ended
+2026-08-17 10:31:26,879::root::INFO::Stopping container geth
+2026-08-17 10:31:27,096::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:31:27,096::root::INFO::Rosbag 6 / 9
+2026-08-17 10:31:27,096::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_24-Mar-10_02' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:32:07,308::root::INFO::Container accountability ended
+2026-08-17 10:32:07,309::root::INFO::Stopping container geth
+2026-08-17 10:32:07,530::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:32:07,530::root::INFO::Rosbag 7 / 9
+2026-08-17 10:32:07,530::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_23-Mar-13_33' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:32:47,771::root::INFO::Container accountability ended
+2026-08-17 10:32:47,772::root::INFO::Stopping container geth
+2026-08-17 10:32:48,028::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:32:48,028::root::INFO::Rosbag 8 / 9
+2026-08-17 10:32:48,028::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_23-Mar-12_58' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:33:28,260::root::INFO::Container accountability ended
+2026-08-17 10:33:28,262::root::INFO::Stopping container geth
+2026-08-17 10:33:28,486::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:33:28,486::root::INFO::Rosbag 9 / 9
+2026-08-17 10:33:28,486::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' ROSBAG='rosbag_20-Mar-09_52' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:34:08,728::root::INFO::Container accountability ended
+2026-08-17 10:34:08,729::root::INFO::Stopping container geth
+2026-08-17 10:34:08,951::root::INFO::=======================================================================
+2026-08-17 10:34:08,951::root::INFO::Total CSVs: 29
+2026-08-17 10:34:08,951::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:34:08,951::root::INFO::CSV 1 / 29
+2026-08-17 10:34:08,951::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_201.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:34:29,156::root::INFO::Container accountability ended
+2026-08-17 10:34:29,157::root::INFO::Stopping container geth
+2026-08-17 10:34:29,276::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:34:29,276::root::INFO::CSV 2 / 29
+2026-08-17 10:34:29,276::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_240.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:35:09,507::root::INFO::Container accountability ended
+2026-08-17 10:35:09,508::root::INFO::Stopping container geth
+2026-08-17 10:35:09,679::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:35:09,679::root::INFO::CSV 3 / 29
+2026-08-17 10:35:09,679::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_196.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:35:39,889::root::INFO::Container accountability ended
+2026-08-17 10:35:39,890::root::INFO::Stopping container geth
+2026-08-17 10:35:40,057::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:35:40,057::root::INFO::CSV 4 / 29
+2026-08-17 10:35:40,057::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:36:00,290::root::INFO::Container accountability ended
+2026-08-17 10:36:00,291::root::INFO::Stopping container geth
+2026-08-17 10:36:00,433::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:36:00,433::root::INFO::CSV 5 / 29
+2026-08-17 10:36:00,433::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_233.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:36:30,632::root::INFO::Container accountability ended
+2026-08-17 10:36:30,633::root::INFO::Stopping container geth
+2026-08-17 10:36:30,793::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:36:30,793::root::INFO::CSV 6 / 29
+2026-08-17 10:36:30,794::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_198.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:37:31,031::root::INFO::Container accountability ended
+2026-08-17 10:37:31,032::root::INFO::Stopping container geth
+2026-08-17 10:37:31,290::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:37:31,290::root::INFO::CSV 7 / 29
+2026-08-17 10:37:31,290::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_244.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:38:01,501::root::INFO::Container accountability ended
+2026-08-17 10:38:01,502::root::INFO::Stopping container geth
+2026-08-17 10:38:01,654::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:38:01,654::root::INFO::CSV 8 / 29
+2026-08-17 10:38:01,654::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_203.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:38:51,895::root::INFO::Container accountability ended
+2026-08-17 10:38:51,897::root::INFO::Stopping container geth
+2026-08-17 10:38:52,098::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:38:52,098::root::INFO::CSV 9 / 29
+2026-08-17 10:38:52,098::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_237.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:39:52,345::root::INFO::Container accountability ended
+2026-08-17 10:39:52,346::root::INFO::Stopping container geth
+2026-08-17 10:39:52,656::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:39:52,656::root::INFO::CSV 10 / 29
+2026-08-17 10:39:52,656::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_253.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:40:32,879::root::INFO::Container accountability ended
+2026-08-17 10:40:32,880::root::INFO::Stopping container geth
+2026-08-17 10:40:33,066::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:40:33,066::root::INFO::CSV 11 / 29
+2026-08-17 10:40:33,066::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_193.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:40:53,278::root::INFO::Container accountability ended
+2026-08-17 10:40:53,280::root::INFO::Stopping container geth
+2026-08-17 10:40:53,405::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:40:53,405::root::INFO::CSV 12 / 29
+2026-08-17 10:40:53,405::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_238.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:41:13,613::root::INFO::Container accountability ended
+2026-08-17 10:41:13,614::root::INFO::Stopping container geth
+2026-08-17 10:41:13,745::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:41:13,745::root::INFO::CSV 13 / 29
+2026-08-17 10:41:13,745::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_227.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:41:23,925::root::INFO::Container accountability ended
+2026-08-17 10:41:23,926::root::INFO::Stopping container geth
+2026-08-17 10:41:24,041::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:41:24,041::root::INFO::CSV 14 / 29
+2026-08-17 10:41:24,041::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_254.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:41:44,239::root::INFO::Container accountability ended
+2026-08-17 10:41:44,241::root::INFO::Stopping container geth
+2026-08-17 10:41:44,392::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:41:44,392::root::INFO::CSV 15 / 29
+2026-08-17 10:41:44,392::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_243.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:42:04,601::root::INFO::Container accountability ended
+2026-08-17 10:42:04,602::root::INFO::Stopping container geth
+2026-08-17 10:42:04,731::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:42:04,731::root::INFO::CSV 16 / 29
+2026-08-17 10:42:04,731::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_257.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:42:34,943::root::INFO::Container accountability ended
+2026-08-17 10:42:34,944::root::INFO::Stopping container geth
+2026-08-17 10:42:35,118::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:42:35,118::root::INFO::CSV 17 / 29
+2026-08-17 10:42:35,118::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_252.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:42:55,323::root::INFO::Container accountability ended
+2026-08-17 10:42:55,324::root::INFO::Stopping container geth
+2026-08-17 10:42:55,450::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:42:55,450::root::INFO::CSV 18 / 29
+2026-08-17 10:42:55,450::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_224.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:43:15,650::root::INFO::Container accountability ended
+2026-08-17 10:43:15,651::root::INFO::Stopping container geth
+2026-08-17 10:43:15,798::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:43:15,798::root::INFO::CSV 19 / 29
+2026-08-17 10:43:15,798::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_199.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:44:16,048::root::INFO::Container accountability ended
+2026-08-17 10:44:16,049::root::INFO::Stopping container geth
+2026-08-17 10:44:16,373::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:44:16,373::root::INFO::CSV 20 / 29
+2026-08-17 10:44:16,373::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_236.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:44:46,593::root::INFO::Container accountability ended
+2026-08-17 10:44:46,594::root::INFO::Stopping container geth
+2026-08-17 10:44:46,735::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:44:46,735::root::INFO::CSV 21 / 29
+2026-08-17 10:44:46,735::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_195.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:46:07,006::root::INFO::Container accountability ended
+2026-08-17 10:46:07,007::root::INFO::Stopping container geth
+2026-08-17 10:46:07,258::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:46:07,258::root::INFO::CSV 22 / 29
+2026-08-17 10:46:07,258::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_255.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:46:27,456::root::INFO::Container accountability ended
+2026-08-17 10:46:27,457::root::INFO::Stopping container geth
+2026-08-17 10:46:27,563::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:46:27,564::root::INFO::CSV 23 / 29
+2026-08-17 10:46:27,564::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_258.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:46:37,753::root::INFO::Container accountability ended
+2026-08-17 10:46:37,755::root::INFO::Stopping container geth
+2026-08-17 10:46:37,866::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:46:37,866::root::INFO::CSV 24 / 29
+2026-08-17 10:46:37,866::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_232.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:47:08,092::root::INFO::Container accountability ended
+2026-08-17 10:47:08,094::root::INFO::Stopping container geth
+2026-08-17 10:47:08,227::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:47:08,227::root::INFO::CSV 25 / 29
+2026-08-17 10:47:08,227::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_228.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:47:38,435::root::INFO::Container accountability ended
+2026-08-17 10:47:38,436::root::INFO::Stopping container geth
+2026-08-17 10:47:38,582::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:47:38,582::root::INFO::CSV 26 / 29
+2026-08-17 10:47:38,582::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_241.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:47:48,759::root::INFO::Container accountability ended
+2026-08-17 10:47:48,760::root::INFO::Stopping container geth
+2026-08-17 10:47:48,862::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:47:48,862::root::INFO::CSV 27 / 29
+2026-08-17 10:47:48,863::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car11_y_2017_d_204.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:48:29,080::root::INFO::Container accountability ended
+2026-08-17 10:48:29,081::root::INFO::Stopping container geth
+2026-08-17 10:48:29,266::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:48:29,266::root::INFO::CSV 28 / 29
+2026-08-17 10:48:29,266::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_235.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:48:49,468::root::INFO::Container accountability ended
+2026-08-17 10:48:49,469::root::INFO::Stopping container geth
+2026-08-17 10:48:49,600::root::INFO::-------------------------------------------------------------------
+2026-08-17 10:48:49,600::root::INFO::CSV 29 / 29
+2026-08-17 10:48:49,601::root::INFO::NETWORK='geth' CONF_FILE='config_geth.yaml' CSV='data_car1_y_2017_d_239.csv' docker compose -f docker/compose/compose.yaml --profile geth up -d
+2026-08-17 10:49:09,813::root::INFO::Container accountability ended
+2026-08-17 10:49:09,815::root::INFO::Stopping container geth
+2026-08-17 10:49:09,924::root::INFO::<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+2026-08-17 10:49:09,985::root::INFO::+--------------------------------------------------------------------------------------------------------------------+
+|                                                      ROSBAGs                                                       |
++---------+-----------+---------+---------------+---------+---------------+--------------+----------+----------------+
+| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct |   disk_rchar  |  disk_wchar  | records  | time_by_record |
++---------+-----------+---------+---------------+---------+---------------+--------------+----------+----------------+
+| hardhat |   18.778  |  52.557 | 219239765.333 |  0.631  | 524009786.111 | 11762540.667 | 2528.444 |     0.008      |
+|   geth  |   27.222  |  36.972 | 219347171.556 |  0.642  | 524448048.778 | 11763058.889 | 2528.444 |     0.011      |
+| ganache |  174.889  |  7.255  | 220966456.889 |  0.671  | 524654701.778 | 11762813.333 | 2528.444 |     0.071      |
+|  anvil  |   26.556  |  37.354 | 219567900.444 |  0.643  | 524667352.556 | 11762876.667 | 2528.444 |     0.011      |
++---------+-----------+---------+---------------+---------+---------------+--------------+----------+----------------+
+2026-08-17 10:49:10,160::root::INFO::+-------------------------------------------------------------------------------------------------------------------+
+|                                                      OBD CSVs                                                     |
++---------+-----------+---------+---------------+---------+--------------+--------------+----------+----------------+
+| network | timestamp | cpu_pct | mem_rss_bytes | mem_pct |  disk_rchar  |  disk_wchar  | records  | time_by_record |
++---------+-----------+---------+---------------+---------+--------------+--------------+----------+----------------+
+| hardhat |   17.31   |  73.069 | 188905118.897 |  0.567  | 29574950.793 | 11343435.69  | 4251.172 |     0.005      |
+|   geth  |   20.552  |  62.293 | 196268738.207 |  0.575  | 30630390.724 | 11749090.103 | 4251.172 |     0.006      |
+| ganache |  173.241  |  9.372  | 195594593.103 |  0.593  | 30630201.172 | 11749027.207 | 4251.172 |     0.043      |
+|  anvil  |   19.966  |  63.671 | 195502221.241 |  0.571  | 30630361.966 | 11748732.345 | 4251.172 |     0.005      |
++---------+-----------+---------+---------------+---------+--------------+--------------+----------+----------------+
+2026-08-17 10:49:10,161::root::INFO::Stopping orchestrator
+

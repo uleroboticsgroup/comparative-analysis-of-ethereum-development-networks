@@ -1,0 +1,135 @@
+2026-08-17 09:47:00,251::bcubed.blockchain.network::INFO::Configuration
+	account_address = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+	contract_address = None
+2026-08-17 09:47:00,251::bcubed.blockchain.network::INFO::Network is initialized
+2026-08-17 09:47:00,251::bcubed.blockchain.node::INFO::Contract is not compiled or its address is not available
+2026-08-17 09:47:00,251::bcubed.blockchain.contract::INFO::Compiling smart contract...
+2026-08-17 09:47:00,350::solcx::INFO::Downloading from https://binaries.soliditylang.org/linux-amd64/solc-linux-amd64-v0.8.0+commit.c7dfd78e
+2026-08-17 09:47:01,492::solcx::INFO::Using solc version 0.8.0
+2026-08-17 09:47:01,492::solcx::INFO::solc 0.8.0 successfully installed at: /home/admin/.solcx/solc-v0.8.0
+2026-08-17 09:47:01,510::bcubed.blockchain.contract::INFO::Contract printed on: /app/BCubed/src/bcubed/blockchain/solidity/BCubedContract.json
+2026-08-17 09:47:01,510::bcubed.blockchain.contract::INFO::Compilation is done
+2026-08-17 09:47:01,510::bcubed.blockchain.contract::INFO::Getting abi and byte code from json file.
+2026-08-17 09:47:01,531::bcubed.config.config::INFO::The value '0x5FbDB2315678afecb367f032d93F642f64180aa3' has been stored in property 'address' and category 'contract'
+2026-08-17 09:47:01,534::bcubed.blockchain.network::INFO::Contract is deployed.
+2026-08-17 09:47:01,534::bcubed.blockchain.node::INFO::Node is initialized
+2026-08-17 09:47:01,534::bcubed.bcubed::INFO::BCubed 'test' initialized.
+2026-08-17 09:47:01,535::acolyte.acolyte::INFO::Initial account balance: 9999.995787423883
+2026-08-17 09:47:01,544::acolyte.config.acolyte_config::INFO::AcolyteConfig is initialized.
+2026-08-17 09:47:01,556::bcubed.blockchain.network::INFO::New MD record was stored
+2026-08-17 09:47:01,559::bcubed.blockchain.network::INFO::MD record was retrieved
+2026-08-17 09:47:01,559::bcubed.blockchain.network::INFO::{
+    "typR": 1,
+    "fieN": 12,
+    "recT": 1786960021544,
+    "sysN": "car1",
+    "sysV": "agile",
+    "sysS": "N/A",
+    "sysM": "chevrolet",
+    "resP": "test",
+    "bbnV": "test",
+    "netID": "N/A",
+    "osyT": "N/A",
+    "sysP": "N/A"
+}
+2026-08-17 09:47:01,559::acolyte.readers.excel_obd_reader::INFO::Starting Excel OBD Reader
+2026-08-17 09:47:01,982::bcubed.blockchain.network::INFO::New 77 SD records were stored Estimated gas: 16724205
+2026-08-17 09:47:02,333::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16658988
+2026-08-17 09:47:02,678::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622456
+2026-08-17 09:47:03,014::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622480
+2026-08-17 09:47:03,163::acolyte.readers.excel_obd_reader::INFO::Processed row 200
+2026-08-17 09:47:03,349::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622324
+2026-08-17 09:47:03,683::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622588
+2026-08-17 09:47:04,014::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:04,340::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622528
+2026-08-17 09:47:04,581::acolyte.readers.excel_obd_reader::INFO::Processed row 400
+2026-08-17 09:47:04,674::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622396
+2026-08-17 09:47:05,008::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:05,336::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:05,676::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622384
+2026-08-17 09:47:06,011::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622516
+2026-08-17 09:47:06,072::acolyte.readers.excel_obd_reader::INFO::Processed row 600
+2026-08-17 09:47:06,342::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622492
+2026-08-17 09:47:06,679::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622360
+2026-08-17 09:47:07,013::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622576
+2026-08-17 09:47:07,347::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:07,508::acolyte.readers.excel_obd_reader::INFO::Processed row 800
+2026-08-17 09:47:07,691::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622456
+2026-08-17 09:47:08,029::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622528
+2026-08-17 09:47:08,364::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622348
+2026-08-17 09:47:08,703::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622384
+2026-08-17 09:47:08,959::acolyte.readers.excel_obd_reader::INFO::Processed row 1000
+2026-08-17 09:47:09,036::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622372
+2026-08-17 09:47:09,368::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622432
+2026-08-17 09:47:09,704::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622360
+2026-08-17 09:47:10,034::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622456
+2026-08-17 09:47:10,368::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622552
+2026-08-17 09:47:10,442::acolyte.readers.excel_obd_reader::INFO::Processed row 1200
+2026-08-17 09:47:10,705::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622576
+2026-08-17 09:47:11,038::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622528
+2026-08-17 09:47:11,370::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622504
+2026-08-17 09:47:11,706::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622492
+2026-08-17 09:47:11,874::acolyte.readers.excel_obd_reader::INFO::Processed row 1400
+2026-08-17 09:47:12,038::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622432
+2026-08-17 09:47:12,373::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622408
+2026-08-17 09:47:12,708::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:13,038::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:13,302::acolyte.readers.excel_obd_reader::INFO::Processed row 1600
+2026-08-17 09:47:13,370::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622408
+2026-08-17 09:47:13,706::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622396
+2026-08-17 09:47:14,041::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622456
+2026-08-17 09:47:14,373::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622516
+2026-08-17 09:47:14,708::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622564
+2026-08-17 09:47:14,794::acolyte.readers.excel_obd_reader::INFO::Processed row 1800
+2026-08-17 09:47:15,041::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:15,374::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622528
+2026-08-17 09:47:15,712::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:16,044::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:16,223::acolyte.readers.excel_obd_reader::INFO::Processed row 2000
+2026-08-17 09:47:16,374::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622456
+2026-08-17 09:47:16,743::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:17,074::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622384
+2026-08-17 09:47:17,400::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622384
+2026-08-17 09:47:17,735::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622432
+2026-08-17 09:47:17,736::acolyte.readers.excel_obd_reader::INFO::Processed row 2200
+2026-08-17 09:47:18,067::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:18,400::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:18,742::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:19,076::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622492
+2026-08-17 09:47:19,174::acolyte.readers.excel_obd_reader::INFO::Processed row 2400
+2026-08-17 09:47:19,411::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622408
+2026-08-17 09:47:19,757::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622576
+2026-08-17 09:47:20,091::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:20,426::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622432
+2026-08-17 09:47:20,623::acolyte.readers.excel_obd_reader::INFO::Processed row 2600
+2026-08-17 09:47:20,770::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622492
+2026-08-17 09:47:21,105::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:21,438::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622492
+2026-08-17 09:47:21,786::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622420
+2026-08-17 09:47:22,122::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622456
+2026-08-17 09:47:22,135::acolyte.readers.excel_obd_reader::INFO::Processed row 2800
+2026-08-17 09:47:22,459::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622456
+2026-08-17 09:47:22,804::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622480
+2026-08-17 09:47:23,140::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622384
+2026-08-17 09:47:23,472::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622240
+2026-08-17 09:47:23,585::acolyte.readers.excel_obd_reader::INFO::Processed row 3000
+2026-08-17 09:47:23,819::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622444
+2026-08-17 09:47:24,152::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622528
+2026-08-17 09:47:24,485::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622588
+2026-08-17 09:47:24,638::acolyte.readers.excel_obd_reader::INFO::Processed row 3146
+2026-08-17 09:47:24,638::acolyte.acolyte::INFO::Storing remaining records and cleaning files...
+2026-08-17 09:47:24,638::bcubed.blockchain.node::INFO::Storing remaining SD records. Records: 51. Estimated gas: 9214566
+2026-08-17 09:47:24,684::bcubed.blockchain.network::INFO::New 51 SD records were stored Estimated gas: 9214566
+2026-08-17 09:47:24,694::bcubed.blockchain.network::INFO::New OD record was stored:
+
+2026-08-17 09:47:24,696::bcubed.blockchain.network::INFO::OD record was retrieved
+2026-08-17 09:47:24,696::bcubed.blockchain.network::INFO::{
+    "typR": 3,
+    "fieN": 6,
+    "recT": 1786960044638,
+    "bbtR": 6294,
+    "iniT": 1503952799041,
+    "finT": 1503964799070
+}
+2026-08-17 09:47:24,697::acolyte.acolyte::INFO::Final account balance: 9999.065296975453657544
+2026-08-17 09:47:24,698::acolyte.acolyte::INFO::Ether needed: 0.930490448429342456

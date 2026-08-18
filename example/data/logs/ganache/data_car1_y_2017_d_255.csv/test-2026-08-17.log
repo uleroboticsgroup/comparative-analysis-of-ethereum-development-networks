@@ -1,0 +1,60 @@
+2026-08-17 09:25:43,708::bcubed.blockchain.network::INFO::Configuration
+	account_address = 0x959FD7Ef9089B7142B6B908Dc3A8af7Aa8ff0FA1
+	contract_address = None
+2026-08-17 09:25:43,708::bcubed.blockchain.network::INFO::Network is initialized
+2026-08-17 09:25:43,708::bcubed.blockchain.node::INFO::Contract is not compiled or its address is not available
+2026-08-17 09:25:43,708::bcubed.blockchain.contract::INFO::Compiling smart contract...
+2026-08-17 09:25:43,827::solcx::INFO::Downloading from https://binaries.soliditylang.org/linux-amd64/solc-linux-amd64-v0.8.0+commit.c7dfd78e
+2026-08-17 09:25:44,986::solcx::INFO::Using solc version 0.8.0
+2026-08-17 09:25:44,986::solcx::INFO::solc 0.8.0 successfully installed at: /home/admin/.solcx/solc-v0.8.0
+2026-08-17 09:25:45,005::bcubed.blockchain.contract::INFO::Contract printed on: /app/BCubed/src/bcubed/blockchain/solidity/BCubedContract.json
+2026-08-17 09:25:45,005::bcubed.blockchain.contract::INFO::Compilation is done
+2026-08-17 09:25:45,005::bcubed.blockchain.contract::INFO::Getting abi and byte code from json file.
+2026-08-17 09:25:45,052::bcubed.config.config::INFO::The value '0x668eD30aAcC7C7c206aAF1327d733226416233E2' has been stored in property 'address' and category 'contract'
+2026-08-17 09:25:45,055::bcubed.blockchain.network::INFO::Contract is deployed.
+2026-08-17 09:25:45,055::bcubed.blockchain.node::INFO::Node is initialized
+2026-08-17 09:25:45,055::bcubed.bcubed::INFO::BCubed 'test' initialized.
+2026-08-17 09:25:45,056::acolyte.acolyte::INFO::Initial account balance: 9999.995787423883
+2026-08-17 09:25:45,061::acolyte.config.acolyte_config::INFO::AcolyteConfig is initialized.
+2026-08-17 09:25:45,115::bcubed.blockchain.network::INFO::New MD record was stored
+2026-08-17 09:25:45,127::bcubed.blockchain.network::INFO::MD record was retrieved
+2026-08-17 09:25:45,127::bcubed.blockchain.network::INFO::{
+    "typR": 1,
+    "fieN": 12,
+    "recT": 1786958745061,
+    "sysN": "car1",
+    "sysV": "agile",
+    "sysS": "N/A",
+    "sysM": "chevrolet",
+    "resP": "test",
+    "bbnV": "test",
+    "netID": "N/A",
+    "osyT": "N/A",
+    "sysP": "N/A"
+}
+2026-08-17 09:25:45,128::acolyte.readers.excel_obd_reader::INFO::Starting Excel OBD Reader
+2026-08-17 09:25:53,373::bcubed.blockchain.network::INFO::New 77 SD records were stored Estimated gas: 16682831
+2026-08-17 09:25:56,361::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16622803
+2026-08-17 09:25:59,310::bcubed.blockchain.network::INFO::New 92 SD records were stored Estimated gas: 16621940
+2026-08-17 09:26:03,034::bcubed.blockchain.network::INFO::New 93 SD records were stored Estimated gas: 16660886
+2026-08-17 09:26:06,620::bcubed.blockchain.network::INFO::New 93 SD records were stored Estimated gas: 16713503
+2026-08-17 09:26:09,863::bcubed.blockchain.network::INFO::New 93 SD records were stored Estimated gas: 16767284
+2026-08-17 09:26:12,646::bcubed.blockchain.network::INFO::New 84 SD records were stored Estimated gas: 16591838
+2026-08-17 09:26:15,968::bcubed.blockchain.network::INFO::New 85 SD records were stored Estimated gas: 16718149
+2026-08-17 09:26:16,588::acolyte.readers.excel_obd_reader::INFO::Processed row 109
+2026-08-17 09:26:16,588::acolyte.acolyte::INFO::Storing remaining records and cleaning files...
+2026-08-17 09:26:16,588::bcubed.blockchain.node::INFO::Storing remaining SD records. Records: 28. Estimated gas: 5076050
+2026-08-17 09:26:16,894::bcubed.blockchain.network::INFO::New 28 SD records were stored Estimated gas: 5076050
+2026-08-17 09:26:16,980::bcubed.blockchain.network::INFO::New OD record was stored:
+
+2026-08-17 09:26:16,984::bcubed.blockchain.network::INFO::OD record was retrieved
+2026-08-17 09:26:16,984::bcubed.blockchain.network::INFO::{
+    "typR": 3,
+    "fieN": 6,
+    "recT": 1786958776588,
+    "bbtR": 739,
+    "iniT": 1505232963078,
+    "finT": 1505239574214
+}
+2026-08-17 09:26:16,985::acolyte.acolyte::INFO::Final account balance: 9999.848992995436846861
+2026-08-17 09:26:16,986::acolyte.acolyte::INFO::Ether needed: 0.146794428446153139
